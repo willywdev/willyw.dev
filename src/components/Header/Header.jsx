@@ -9,12 +9,12 @@ export default function Header() {
           <h1 className="header__headline">willyw.dev</h1>
           <p>Software Developer</p>
           <p>Full Stack Developer</p>
+          <ul className="header__contact-links">
+            <li>Github</li>
+            <li>Mail</li>
+            <li>LinkedIn</li>
+          </ul>
         </article>
-      </section>
-      <section className="header__contact-links">
-        <a>Email</a>
-        <a>Github</a>
-        <a>LinkedIn</a>
       </section>
     </header>
   );

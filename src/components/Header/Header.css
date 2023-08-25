@@ -1,6 +1,6 @@
 .header {
   margin-left: 6%;
-  margin-top: 16%;
+  margin-top: 24%;
   flex-direction: column;
   display: flex;
 }
@@ -13,8 +13,8 @@
 
 .header__contact-links {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 3px;
+  list-style-type: none;
 }
 
 .header__logo {
