@@ -12,9 +12,12 @@
 }
 
 .header__contact-links {
+  margin-top: 0.3rem;
   display: flex;
-  gap: 3px;
+  gap: 5px;
   list-style-type: none;
+  font-size: 1.5rem;
+  align-items: center;
 }
 
 .header__logo {

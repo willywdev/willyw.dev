@@ -1,3 +1,4 @@
+import { AiFillGithub, AiFillMessage } from "react-icons/ai";
 import "./Header.css";
 
 export default function Header() {
@@ -10,9 +11,16 @@ export default function Header() {
           <p>Software Developer</p>
           <p>Full Stack Developer</p>
           <ul className="header__contact-links">
-            <li>Github</li>
-            <li>Mail</li>
-            <li>LinkedIn</li>
+            <li>
+              <a href="">
+                <AiFillGithub />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <AiFillMessage />
+              </a>
+            </li>
           </ul>
         </article>
       </section>
