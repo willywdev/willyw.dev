@@ -12,12 +12,12 @@ export default function Header() {
           <p>Full Stack Developer</p>
           <ul className="header__contact-links">
             <li>
-              <a href="">
+              <a href="https://github.com/willywdev/" target="_blank">
                 <AiFillGithub />
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="mailto:kontakt@willydev.de">
                 <AiFillMessage />
               </a>
             </li>
