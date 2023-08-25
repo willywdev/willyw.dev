@@ -1,28 +1,24 @@
 .header {
   margin-left: 6%;
   margin-top: 16%;
+  flex-direction: column;
+  display: flex;
+}
+
+.header__main-content {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.header__contact-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .header__logo {
   width: 128px;
   border-radius: 50%;
   outline: 2px var(--text-color) solid;
-}
-
-.header__contact-links {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-left: 2.2rem;
-  margin-right: 1rem;
-  flex-direction: column;
-}
-
-@media (min-width: 576px) {
-  .header__contact-links {
-    flex-direction: row;
-  }
 }
