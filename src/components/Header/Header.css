@@ -25,3 +25,7 @@
   border-radius: 50%;
   outline: 2px var(--text-color) solid;
 }
+
+.skill-icons {
+  width: 32px;
+}
