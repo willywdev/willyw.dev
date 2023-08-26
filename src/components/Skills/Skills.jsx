@@ -26,6 +26,8 @@ import {
 } from "react-skillicons";
 import "./Skills.css";
 
+// ! Make .json File and generate icons dynamically
+
 export default function Skills() {
   return (
     <>
