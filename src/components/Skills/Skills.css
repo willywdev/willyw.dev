@@ -4,12 +4,12 @@
 }
 
 .skills__article {
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   margin-left: 5px;
   display: flex;
   gap: 6px;
 }
 
 .skills__icons {
-  width: 52px;
+  width: 56px;
 }
