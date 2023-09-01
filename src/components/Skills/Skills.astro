@@ -3,40 +3,64 @@ import Image from "astro/components/Image.astro";
 import Astro_Build from "./icons/Astro-Build.svg";
 import Bash_Dark from "./icons/Bash-Dark.svg";
 import Bootstrap from "./icons/Bootstrap.svg";
+import CSS from "./icons/CSS.svg";
+import Electron from "./icons/Electron.svg";
+import Firebase from "./icons/Firebase-Dark.svg";
+import Git from "./icons/Git.svg";
+import Github from "./icons/Github-Dark.svg";
+import HTML from "./icons/HTML.svg";
+import JavaScript from "./icons/JavaScript.svg";
+import Jest from "./icons/Jest.svg";
+import MaterialUI from "./icons/MaterialUI-Dark.svg";
+import MongoDB from "./icons/MongoDB.svg";
+import NextJS from "./icons/NextJS-Dark.svg";
+import NodeJS from "./icons/NodeJS-Dark.svg";
+import Postman from "./icons/Postman.svg";
+import Python from "./icons/Python-Dark.svg";
+import React_Dark from "./icons/React-Dark.svg";
+import StyledComponents from "./icons/StyledComponents.svg";
+import TailwindCSS from "./icons/TailwindCSS-Dark.svg";
+import Vite from "./icons/Vite-Dark.svg";
 ---
 
 <article class="skills__grid">
+  <Image src={HTML} alt="HTML" class="skills__icon" />
+  <Image src={CSS} alt="CSS" class="skills__icon" />
+  <Image src={JavaScript} alt="JavaScript" class="skills__icon" />
+  <Image src={Python} alt="Python" class="skills__icon" />
+  <Image src={Git} alt="Git" class="skills__icon" />
+  <Image src={React_Dark} alt="React" class="skills__icon" />
   <Image src={Astro_Build} alt="Astro" class="skills__icon" />
+  <Image src={NextJS} alt="NextJS" class="skills__icon" />
+  <Image src={Electron} alt="Electron" class="skills__icon" />
+  <Image src={NodeJS} alt="NodeJS" class="skills__icon" />
+  <Image src={Jest} alt="Jest" class="skills__icon" />
+  <Image src={Firebase} alt="Firebase" class="skills__icon" />
+  <Image src={MongoDB} alt="MongoDB" class="skills__icon" />
+  <Image src={Postman} alt="Postman" class="skills__icon" />
   <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
+  <Image src={Vite} alt="Vite" class="skills__icon" />
+  <Image src={MaterialUI} alt="MaterialUI" class="skills__icon" />
   <Image src={Bootstrap} alt="Bootstrap" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-  <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
+  <Image src={StyledComponents} alt="StyledComponents" class="skills__icon" />
+  <Image src={TailwindCSS} alt="TailwindCSS" class="skills__icon" />
+  <Image src={Github} alt="Github" class="skills__icon" />
 </article>
 
 <style>
   .skills__grid {
     display: grid;
+    justify-items: center;
+    justify-content: center;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 0.2rem;
+    gap: 0.3rem;
+    row-gap: 0.5rem;
     padding: 0 1rem;
+    width: 100%;
   }
   .skills__icon {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
   }
 </style>
