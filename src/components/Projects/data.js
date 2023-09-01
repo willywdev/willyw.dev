@@ -1,4 +1,4 @@
-const projects = [
+const projectData = [
   {
     id: 1,
     imgSrc: "./images/linkster.png",
@@ -15,4 +15,4 @@ const projects = [
   },
 ];
 
-export default projects;
+export default projectData;

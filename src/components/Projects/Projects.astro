@@ -1,27 +1,22 @@
 ---
+import Card from "../Card/Card.astro";
 import "./Projects.css";
-import projects from "./data";
+import projectData from "./data";
+import linkster from "./images/linkster.png";
+import linktrim from "./images/linktrim.png";
 ---
 
 <ul role="list" class="link-card-grid">
-  {
-    projects.map((project) => {
-      return (
-        <li class="link-card">
-          <a href={project.link}>
-            <img
-              class="project-image"
-              src={project.imgSrc}
-              alt={project.title}
-            />
-            <h2>
-              {project.title}
-              <span> &rarr;</span>
-            </h2>
-            <p>{project.description}</p>
-          </a>
-        </li>
-      );
-    })
-  }
+  <Card
+    image={linkster}
+    link={projectData[0].link}
+    title={projectData[0].title}
+    description={projectData[0].description}
+  />
+  <Card
+    image={linktrim}
+    link={projectData[1].link}
+    title={projectData[1].title}
+    description={projectData[1].description}
+  />
 </ul>

@@ -1,0 +1,15 @@
+---
+const { image, link, title, description } = Astro.props;
+import Image from "astro/components/Image.astro";
+---
+
+<li class="link-card">
+  <a href={link}>
+    <Image class="project-image" src={image} alt={title} />
+    <h2>
+      {title}
+      <span> &rarr;</span>
+    </h2>
+    <p>{description}</p>
+  </a>
+</li>
