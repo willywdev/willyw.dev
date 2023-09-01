@@ -1,0 +1,31 @@
+---
+import Image from "astro/components/Image.astro";
+const { name, img } = Astro.props;
+---
+
+<li class="projects__tag">
+  <Image src={img} alt={name} class="projects__tag-icon" /><span
+    class="projects__tag-text">{name}</span
+  >
+</li>
+
+<style>
+  .projects__tag {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: color-mix(in srgb, white, transparent 85%);
+    border-radius: 15px;
+    gap: 3px;
+    margin-bottom: -1rem;
+  }
+  .projects__tag:last-of-type {
+    margin-right: -1rem;
+  }
+  .projects__tag-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .projects__tag-text {
+  }
+</style>

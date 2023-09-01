@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./font/Inter.ttf");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --accent: 255, 105, 105;
+  --accent-light: 225, 255, 150;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
+}
+html {
+  font-family: "Inter", system-ui, sans-serif;
+  background: #13151a;
+  background-size: 224px;
+}
+code {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+body {
+  margin-top: 15%;
+}
