@@ -1,6 +1,11 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./font/Roboto-Regular.ttf");
+}
+
 :root {
-  --accent: 136, 58, 234;
-  --accent-light: 224, 204, 250;
+  --accent: 255, 105, 105;
+  --accent-light: 225, 255, 150;
   --accent-dark: 49, 10, 101;
   --accent-gradient: linear-gradient(
     45deg,
@@ -10,11 +15,14 @@
   );
 }
 html {
-  font-family: system-ui, sans-serif;
+  font-family: "Roboto", system-ui, sans-serif;
   background: #13151a;
   background-size: 224px;
 }
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+}
+body {
+  margin-top: 20%;
 }
