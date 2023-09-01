@@ -1,6 +1,6 @@
 main {
   color: white;
-  font-size: 20px;
+  font-size: 1.2rem;
   line-height: 1.6;
   display: flex;
   justify-content: center;
@@ -27,14 +27,15 @@ h1 {
   background-size: 400%;
   background-position: 0%;
 }
-.link-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-  gap: 2rem;
-  padding: 0;
-}
 .job-title {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5px;
+}
+.main-headlines {
+  font-size: 1.7rem;
+  align-self: flex-start;
+  margin-left: 8%;
+  margin-top: 1rem;
 }

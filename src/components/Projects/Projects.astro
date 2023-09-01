@@ -1,0 +1,27 @@
+---
+import "./Projects.css";
+import projects from "./data";
+---
+
+<ul role="list" class="link-card-grid">
+  {
+    projects.map((project) => {
+      return (
+        <li class="link-card">
+          <a href={project.link}>
+            <img
+              class="project-image"
+              src={project.imgSrc}
+              alt={project.title}
+            />
+            <h2>
+              {project.title}
+              <span> &rarr;</span>
+            </h2>
+            <p>{project.description}</p>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

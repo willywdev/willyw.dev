@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./font/Inter.ttf");
+}
+
 *,
 *::before,
 *::after {
@@ -18,7 +23,7 @@
   );
 }
 html {
-  font-family: system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   background: #13151a;
   background-size: 224px;
 }

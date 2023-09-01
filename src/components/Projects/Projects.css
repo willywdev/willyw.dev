@@ -1,4 +1,10 @@
+.link-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+  padding: 0;
+}
 .link-card {
+  margin: 1rem;
   list-style: none;
   display: flex;
   padding: 1px;
@@ -35,4 +41,9 @@ p {
 }
 .link-card:is(:hover, :focus-within) h2 {
   color: rgb(var(--accent-light));
+}
+.project-image {
+  border-radius: 10px;
+  height: auto;
+  width: 325px;
 }
