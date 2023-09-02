@@ -4,9 +4,12 @@
   color: white;
   font-size: 1.2rem;
   line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .footer {
+  align-self: flex-start;
 }
 
 .header {
@@ -44,10 +47,10 @@
   margin-top: 5px;
 }
 .main__headlines-small {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   align-self: flex-start;
   justify-self: flex-start;
-  margin: 1rem;
+  margin: 0.5rem 1rem;
 }
 ::selection {
   color: white;
