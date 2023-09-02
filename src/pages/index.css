@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .main__code-background {
@@ -19,7 +20,7 @@
   z-index: -1;
   opacity: 0.1;
   top: -12px;
-  clip: auto;
+  clip-path: none;
 }
 .main__headline {
   font-size: 4rem;

@@ -1,5 +1,6 @@
 ---
 import Card from "../Card/Card.astro";
+import Motion from "../Motion/Motion";
 import Tag from "../Tag/Tag.astro";
 import projectData from "./data.js";
 import linkster from "./images/linkster.png";
@@ -11,34 +12,42 @@ import reactSVG from "./svg/react-original.svg";
 ---
 
 <ul role="list" class="projects__list">
-  <Card
-    image={linkster}
-    link={projectData[0].link}
-    title={projectData[0].title}
-    description={projectData[0].description}>
-    <ul class="projects__tags-list">
-      <Tag name="React" img={reactSVG} />
-      <Tag name="JavaScript" img={javascript} />
-      <Tag name="CSS" img={css} />
-    </ul>
-    <a href={projectData[0].repo} class="projects__repo-button" target="_blank"
-      >See Code</a
-    >
-  </Card>
-  <Card
-    image={linktrim}
-    link={projectData[1].link}
-    title={projectData[1].title}
-    description={projectData[1].description}>
-    <ul class="projects__tags-list">
-      <Tag name="HTML" img={html} />
-      <Tag name="JavaScript" img={javascript} />
-      <Tag name="CSS" img={css} />
-    </ul>
-    <a href={projectData[1].repo} class="projects__repo-button" target="_blank"
-      >See Code</a
-    >
-  </Card>
+  <Motion client:load>
+    <Card
+      image={linkster}
+      link={projectData[0].link}
+      title={projectData[0].title}
+      description={projectData[0].description}>
+      <ul class="projects__tags-list">
+        <Tag name="React" img={reactSVG} />
+        <Tag name="JavaScript" img={javascript} />
+        <Tag name="CSS" img={css} />
+      </ul>
+      <a
+        href={projectData[0].repo}
+        class="projects__repo-button"
+        target="_blank">See Code</a
+      >
+    </Card>
+  </Motion>
+  <Motion client:load>
+    <Card
+      image={linktrim}
+      link={projectData[1].link}
+      title={projectData[1].title}
+      description={projectData[1].description}>
+      <ul class="projects__tags-list">
+        <Tag name="HTML" img={html} />
+        <Tag name="JavaScript" img={javascript} />
+        <Tag name="CSS" img={css} />
+      </ul>
+      <a
+        href={projectData[1].repo}
+        class="projects__repo-button"
+        target="_blank">See Code</a
+      >
+    </Card>
+  </Motion>
 </ul>
 
 <style>

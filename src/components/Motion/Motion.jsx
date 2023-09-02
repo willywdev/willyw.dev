@@ -8,7 +8,7 @@ const variants = {
 
 export default function Motion(props) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();
 
   useEffect(() => {
