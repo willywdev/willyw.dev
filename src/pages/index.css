@@ -8,13 +8,8 @@
 
 .header {
   display: flex;
-  justify-content: center;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .main__code-background {
@@ -23,13 +18,13 @@
   height: auto;
   z-index: -1;
   opacity: 0.1;
-  top: -32px;
+  top: -12px;
+  clip: auto;
 }
 .main__headline {
   font-size: 4rem;
   font-weight: 700;
   line-height: 1;
-  text-align: center;
 }
 .text-gradient {
   background-image: var(--accent-gradient);
@@ -50,4 +45,8 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
+}
+::selection {
+  color: white;
+  background: rgb(151, 61, 61);
 }
