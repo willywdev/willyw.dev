@@ -1,10 +1,18 @@
-.main {
+.header {
   color: white;
   font-size: 1.2rem;
   line-height: 1.6;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 .main__code-background {
@@ -37,7 +45,7 @@
 .main__headlines-small {
   font-size: 1.7rem;
   align-self: flex-start;
-  margin-left: 5%;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-left: 1rem;
 }
