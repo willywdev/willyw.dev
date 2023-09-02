@@ -4,18 +4,19 @@ import Motion from "../Motion/Motion";
 
 <Motion client:load>
   <p class="aboutme">
-    Hello! I'm Willy, a passionate software developer and full-stack enthusiast
-    based in Germany. <br />With a strong foundation in web development and a
-    particular focus on React, I'm on an exciting journey to expand my skills
-    and make a meaningful impact in the world of technology.
+    <span class="aboutme-colored">Hello!</span> I'm Willy, a passionate software
+    developer and full-stack enthusiast based in Germany. <br />With a strong
+    foundation in web development and a particular focus on React, I'm on an
+    exciting journey to expand my skills and make a meaningful impact in the
+    world of technology.
   </p>
 </Motion>
 <Motion client:load>
   <p class="aboutme">
-    Besides coding, I'm into web development trends, open-source contributions,
-    and collaborating with fellow developers. <br /> My tech journey began in
-    the early days of web browsing, and it still drives my passion as a software
-    developer.
+    <span class="aboutme-colored">Besides</span> coding, I'm into web
+    development trends, open-source contributions, and collaborating with fellow
+    developers. <br /> My tech journey began in the early days of web browsing,
+    and it still drives my passion as a software developer.
   </p>
 </Motion>
 
@@ -33,5 +34,8 @@ import Motion from "../Motion/Motion";
     padding: 0 1rem;
     margin-bottom: 1rem;
     font-size: 1.15rem;
+  }
+  .aboutme-colored {
+    color: rgb(var(--accent-light));
   }
 </style>
