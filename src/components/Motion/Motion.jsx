@@ -29,7 +29,7 @@ export default function Motion(props) {
         variants={variants}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.25, delay: 0.15 }}>
+        transition={{ duration: 0.3, delay: 0.3 }}>
         {props.children}
       </motion.div>
     </div>

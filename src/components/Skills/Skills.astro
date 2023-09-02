@@ -24,66 +24,74 @@ import TailwindCSS from "./icons/TailwindCSS-Dark.svg";
 import Vite from "./icons/Vite-Dark.svg";
 ---
 
-<Motion client:load>
-  <article class="skills__grid">
-    <Image src={HTML} alt="HTML" class="skills__icon" />
-    <Image src={CSS} alt="CSS" class="skills__icon" />
-    <Image src={JavaScript} alt="JavaScript" class="skills__icon" />
-    <Image src={Python} alt="Python" class="skills__icon" />
-    <Image src={Git} alt="Git" class="skills__icon" />
-    <Image src={React_Dark} alt="React" class="skills__icon" />
-    <Image src={Astro_Build} alt="Astro" class="skills__icon" />
-  </article>
+<section class="skills">
   <Motion client:load>
     <article class="skills__grid">
-      <Image src={NextJS} alt="NextJS" class="skills__icon" />
-      <Image src={Electron} alt="Electron" class="skills__icon" />
-      <Image src={NodeJS} alt="NodeJS" class="skills__icon" />
-      <Image src={Jest} alt="Jest" class="skills__icon" />
-      <Image src={Firebase} alt="Firebase" class="skills__icon" />
-      <Image src={MongoDB} alt="MongoDB" class="skills__icon" />
-      <Image src={Postman} alt="Postman" class="skills__icon" />
+      <Image src={HTML} alt="HTML" class="skills__icon" />
+      <Image src={CSS} alt="CSS" class="skills__icon" />
+      <Image src={JavaScript} alt="JavaScript" class="skills__icon" />
+      <Image src={Python} alt="Python" class="skills__icon" />
+      <Image src={Git} alt="Git" class="skills__icon" />
+      <Image src={React_Dark} alt="React" class="skills__icon" />
+      <Image src={Astro_Build} alt="Astro" class="skills__icon" />
     </article>
-  </Motion>
-  <Motion client:load>
-    <article class="skills__grid">
-      <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-      <Image src={Vite} alt="Vite" class="skills__icon" />
-      <Image src={MaterialUI} alt="MaterialUI" class="skills__icon" />
-      <Image src={Bootstrap} alt="Bootstrap" class="skills__icon" />
-      <Image
-        src={StyledComponents}
-        alt="StyledComponents"
-        class="skills__icon"
-      />
-      <Image src={TailwindCSS} alt="TailwindCSS" class="skills__icon" />
-      <Image src={Github} alt="Github" class="skills__icon" />
-    </article>
-  </Motion>
 
-  <style>
+    <Motion client:load>
+      <article class="skills__grid">
+        <Image src={NextJS} alt="NextJS" class="skills__icon" />
+        <Image src={Electron} alt="Electron" class="skills__icon" />
+        <Image src={NodeJS} alt="NodeJS" class="skills__icon" />
+        <Image src={Jest} alt="Jest" class="skills__icon" />
+        <Image src={Firebase} alt="Firebase" class="skills__icon" />
+        <Image src={MongoDB} alt="MongoDB" class="skills__icon" />
+        <Image src={Postman} alt="Postman" class="skills__icon" />
+      </article>
+
+      <Motion client:load>
+        <article class="skills__grid">
+          <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
+          <Image src={Vite} alt="Vite" class="skills__icon" />
+          <Image src={MaterialUI} alt="MaterialUI" class="skills__icon" />
+          <Image src={Bootstrap} alt="Bootstrap" class="skills__icon" />
+          <Image
+            src={StyledComponents}
+            alt="StyledComponents"
+            class="skills__icon"
+          />
+          <Image src={TailwindCSS} alt="TailwindCSS" class="skills__icon" />
+          <Image src={Github} alt="Github" class="skills__icon" />
+        </article>
+      </Motion>
+    </Motion>
+  </Motion>
+</section>
+
+<style>
+  .skills {
+    display: flex;
+    justify-content: center;
+  }
+  .skills__grid {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+  .skills__icon {
+    width: 46px;
+    height: 46px;
+  }
+  @media (min-width: 580px) {
     .skills__grid {
-      display: grid;
-      justify-items: center;
-      justify-content: center;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 0.3rem;
-      margin-bottom: 0.5rem;
+      grid-template-columns: repeat(7, 52px);
+      justify-content: flex-start;
+      margin-left: 4%;
     }
     .skills__icon {
-      width: 46px;
-      height: 46px;
+      width: 52px;
+      height: 52px;
     }
-    @media (min-width: 580px) {
-      .skills__grid {
-        grid-template-columns: repeat(7, 52px);
-        justify-content: flex-start;
-        margin-left: 4%;
-      }
-      .skills__icon {
-        width: 52px;
-        height: 52px;
-      }
-    }
-  </style>
-</Motion>
+  }
+</style>

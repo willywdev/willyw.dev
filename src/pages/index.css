@@ -6,6 +6,9 @@
   line-height: 1.6;
 }
 
+.footer {
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -43,9 +46,8 @@
 .main__headlines-small {
   font-size: 1.7rem;
   align-self: flex-start;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
+  justify-self: flex-start;
+  margin: 1rem;
 }
 ::selection {
   color: white;
