@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.0",
+    "@astrojs/vercel": "^4.0.5",
+    "@sendgrid/mail": "^7.7.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^3.0.5",
