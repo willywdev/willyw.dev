@@ -60,3 +60,10 @@
   color: white;
   background: rgb(151, 61, 61);
 }
+a {
+  all: unset;
+  cursor: pointer;
+}
+a::hover {
+  color: var(--accent);
+}
