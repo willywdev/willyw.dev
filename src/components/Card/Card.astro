@@ -47,7 +47,7 @@ import Image from "astro/components/Image.astro";
   }
   .card__description {
     margin-top: 0.2rem;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
   }
   .card:is(:hover, :focus-within) {
     background-position: 0;
@@ -60,5 +60,11 @@ import Image from "astro/components/Image.astro";
     border-radius: 10px;
     height: auto;
     width: 100%;
+  }
+
+  @media screen and (min-width: 400px;) {
+    .card {
+      min-height: 385px;
+    }
   }
 </style>

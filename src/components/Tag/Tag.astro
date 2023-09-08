@@ -4,9 +4,7 @@ const { name, img } = Astro.props;
 ---
 
 <li class="projects__tag">
-  <Image src={img} alt={name} class="projects__tag-icon" /><span
-    class="projects__tag-text">{name}</span
-  >
+  <Image src={img} alt={name} class="projects__tag-icon" />{name}
 </li>
 
 <style>
@@ -25,7 +23,5 @@ const { name, img } = Astro.props;
   .projects__tag-icon {
     width: 16px;
     height: 16px;
-  }
-  .projects__tag-text {
   }
 </style>
