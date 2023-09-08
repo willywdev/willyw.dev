@@ -19,8 +19,7 @@ import LinkedIn from "./icons/linkedin.png";
       ><Image src={Mail} alt="Github" class="contact__icons" /> E-Mail</a
     >
   </section>
-</Motion>
-<Motion client:load>
+
   <section class="contact__here">
     <Form />
   </section>
@@ -50,5 +49,10 @@ import LinkedIn from "./icons/linkedin.png";
   .contact__icons {
     width: 26px;
     height: 26px;
+  }
+  .contact__here {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 </style>
