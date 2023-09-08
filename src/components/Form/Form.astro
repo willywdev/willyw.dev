@@ -20,6 +20,7 @@ if (Astro.request.method === "POST") {
       replyTo: { email: email, name: name },
       subject: `Contact form submission from ${name}`,
       text: message,
+      html: "<strong>Send by" + email + " .";
     };
     await sendGrid
       .send(msg)
