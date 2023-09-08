@@ -62,10 +62,19 @@ import "./index.css";
     <Aboutme />
     <Divider />
     <h2 class="main__headlines-small">Contact me</h2>
-    <Contact />
+    <div class="contact__wrapper">
+      <Contact />
+    </div>
     <Divider />
   </main>
   <footer class="footer">
     <h2 class="main__headlines-small">Build with</h2>
   </footer>
 </Layout>
+
+<style>
+  .contact__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+</style>

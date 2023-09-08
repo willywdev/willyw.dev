@@ -1,6 +1,5 @@
 ---
 import Image from "astro/components/Image.astro";
-import Form from "../Form/Form.astro";
 import Motion from "../Motion/Motion";
 import Mail from "./icons/email.png";
 import Github from "./icons/github.png";
@@ -9,19 +8,24 @@ import LinkedIn from "./icons/linkedin.png";
 
 <Motion client:load>
   <section class="contact">
-    <a class="contact__links" href="" target="_blank"
+    <a
+      class="contact__links"
+      href="https://www.linkedin.com/in/wilhelm-w-00a682280/"
+      target="_blank"
       ><Image src={LinkedIn} alt="Github" class="contact__icons" /> LinkedIn</a
     >
-    <a class="contact__links" href="" target="_blank"
+    <a
+      class="contact__links"
+      href="https://github.com/willywdev/"
+      target="_blank"
       ><Image src={Github} alt="Github" class="contact__icons" /> Github</a
     >
     <a class="contact__links" href="mailto:kontakt@willydev.de" target="_blank"
       ><Image src={Mail} alt="Github" class="contact__icons" /> E-Mail</a
     >
-  </section>
-
-  <section class="contact__here">
-    <Form />
+    <!--   <section class="contact__here">
+      <Form />
+    </section> -->
   </section>
 </Motion>
 
