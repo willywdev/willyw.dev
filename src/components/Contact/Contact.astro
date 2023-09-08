@@ -1,9 +1,10 @@
 ---
 import Image from "astro/components/Image.astro";
+import Form from "../Form/Form.astro";
 import Motion from "../Motion/Motion";
-import Github from "./icons/GrommetIconsGithub.svg";
-import Mail from "./icons/LineMdEmail.svg";
-import LinkedIn from "./icons/LogosLinkedinIcon.svg";
+import Mail from "./icons/email.png";
+import Github from "./icons/github.png";
+import LinkedIn from "./icons/linkedin.png";
 ---
 
 <Motion client:load>
@@ -17,6 +18,11 @@ import LinkedIn from "./icons/LogosLinkedinIcon.svg";
     <a class="contact__links" href="mailto:kontakt@willydev.de" target="_blank"
       ><Image src={Mail} alt="Github" class="contact__icons" /> E-Mail</a
     >
+  </section>
+</Motion>
+<Motion client:load>
+  <section class="contact__here">
+    <Form />
   </section>
 </Motion>
 
@@ -34,21 +40,15 @@ import LinkedIn from "./icons/LogosLinkedinIcon.svg";
     gap: 4px;
     align-items: center;
     margin-bottom: 1rem;
-    opacity: 0.8;
   }
   .contact__links:hover {
     color: rgb(var(--accent));
-    opacity: 1;
   }
   .contact__links:active {
     color: rgb(var(--accent));
-    opacity: 1;
   }
   .contact__icons {
-    width: 24px;
-    height: 24px;
-    background-color: rgba(255, 255, 255);
-    border-radius: 50%;
-    padding: 2px;
+    width: 26px;
+    height: 26px;
   }
 </style>

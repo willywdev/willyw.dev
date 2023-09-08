@@ -35,34 +35,32 @@ import Vite from "./icons/Vite-Dark.svg";
       <Image src={React_Dark} alt="React" class="skills__icon" />
       <Image src={Astro_Build} alt="Astro" class="skills__icon" />
     </article>
-
-    <Motion client:load>
-      <article class="skills__grid">
-        <Image src={NextJS} alt="NextJS" class="skills__icon" />
-        <Image src={Electron} alt="Electron" class="skills__icon" />
-        <Image src={NodeJS} alt="NodeJS" class="skills__icon" />
-        <Image src={Jest} alt="Jest" class="skills__icon" />
-        <Image src={Firebase} alt="Firebase" class="skills__icon" />
-        <Image src={MongoDB} alt="MongoDB" class="skills__icon" />
-        <Image src={Postman} alt="Postman" class="skills__icon" />
-      </article>
-
-      <Motion client:load>
-        <article class="skills__grid">
-          <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
-          <Image src={Vite} alt="Vite" class="skills__icon" />
-          <Image src={MaterialUI} alt="MaterialUI" class="skills__icon" />
-          <Image src={Bootstrap} alt="Bootstrap" class="skills__icon" />
-          <Image
-            src={StyledComponents}
-            alt="StyledComponents"
-            class="skills__icon"
-          />
-          <Image src={TailwindCSS} alt="TailwindCSS" class="skills__icon" />
-          <Image src={Github} alt="Github" class="skills__icon" />
-        </article>
-      </Motion>
-    </Motion>
+  </Motion>
+  <Motion client:load>
+    <article class="skills__grid">
+      <Image src={NextJS} alt="NextJS" class="skills__icon" />
+      <Image src={Electron} alt="Electron" class="skills__icon" />
+      <Image src={NodeJS} alt="NodeJS" class="skills__icon" />
+      <Image src={Jest} alt="Jest" class="skills__icon" />
+      <Image src={Firebase} alt="Firebase" class="skills__icon" />
+      <Image src={MongoDB} alt="MongoDB" class="skills__icon" />
+      <Image src={Postman} alt="Postman" class="skills__icon" />
+    </article>
+  </Motion>
+  <Motion client:load>
+    <article class="skills__grid">
+      <Image src={Bash_Dark} alt="Bash" class="skills__icon" />
+      <Image src={Vite} alt="Vite" class="skills__icon" />
+      <Image src={MaterialUI} alt="MaterialUI" class="skills__icon" />
+      <Image src={Bootstrap} alt="Bootstrap" class="skills__icon" />
+      <Image
+        src={StyledComponents}
+        alt="StyledComponents"
+        class="skills__icon"
+      />
+      <Image src={TailwindCSS} alt="TailwindCSS" class="skills__icon" />
+      <Image src={Github} alt="Github" class="skills__icon" />
+    </article>
   </Motion>
 </section>
 
@@ -70,12 +68,13 @@ import Vite from "./icons/Vite-Dark.svg";
   .skills {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   .skills__grid {
-    display: grid;
+    display: flex;
     justify-items: center;
     justify-content: center;
-    grid-template-columns: repeat(7, 1fr);
     gap: 0.3rem;
     margin-bottom: 0.5rem;
   }
@@ -85,7 +84,7 @@ import Vite from "./icons/Vite-Dark.svg";
   }
   @media (min-width: 580px) {
     .skills__grid {
-      grid-template-columns: repeat(7, 52px);
+      grid-template-columns: repeat(7, 1fr);
       justify-content: flex-start;
       margin-left: 4%;
     }

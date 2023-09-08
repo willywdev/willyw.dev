@@ -12,24 +12,21 @@ import reactSVG from "./svg/react-original.svg";
 ---
 
 <ul role="list" class="projects__list">
-  <Motion client:load>
-    <Card
-      image={linkster}
-      link={projectData[0].link}
-      title={projectData[0].title}
-      description={projectData[0].description}>
-      <ul class="projects__tags-list">
-        <Tag name="React" img={reactSVG} />
-        <Tag name="JavaScript" img={javascript} />
-        <Tag name="CSS" img={css} />
-      </ul>
-      <a
-        href={projectData[0].repo}
-        class="projects__repo-button"
-        target="_blank">See Code</a
-      >
-    </Card>
-  </Motion>
+  <Card
+    image={linkster}
+    link={projectData[0].link}
+    title={projectData[0].title}
+    description={projectData[0].description}>
+    <ul class="projects__tags-list">
+      <Tag name="React" img={reactSVG} />
+      <Tag name="JavaScript" img={javascript} />
+      <Tag name="CSS" img={css} />
+    </ul>
+    <a href={projectData[0].repo} class="projects__repo-button" target="_blank"
+      >See Code</a
+    >
+  </Card>
+
   <Motion client:load>
     <Card
       image={linktrim}
