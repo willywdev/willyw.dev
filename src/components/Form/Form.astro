@@ -3,6 +3,14 @@ import sendGrid from "@sendgrid/mail";
 
 sendGrid.setApiKey(import.meta.env.SENDGRID_API_KEY);
 
+function sanitizeHTML(code) {
+  if (code.includes("<img")) {
+    return "Sanitized by Server";
+  } else {
+    return code;
+  }
+}
+
 if (Astro.request.method === "POST") {
   try {
     // Getting posted data from our contact form
@@ -21,7 +29,7 @@ if (Astro.request.method === "POST") {
       subject: `Contact form submission from ${name}`,
       text: message,
       html: `<strong>Send by ${email}</strong><br>
-            ${message}`,
+            ${sanitizeHTML(message)}`,
     };
     await sendGrid
       .send(msg)
