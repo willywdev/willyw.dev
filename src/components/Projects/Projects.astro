@@ -1,6 +1,5 @@
 ---
 import Card from "../Card/Card.astro";
-import Motion from "../Motion/Motion";
 import Tag from "../Tag/Tag.astro";
 import projectData from "./data.js";
 import linkster from "./images/linkster.png";
@@ -27,24 +26,20 @@ import reactSVG from "./svg/react-original.svg";
     >
   </Card>
 
-  <Motion client:load>
-    <Card
-      image={linktrim}
-      link={projectData[1].link}
-      title={projectData[1].title}
-      description={projectData[1].description}>
-      <ul class="projects__tags-list">
-        <Tag name="HTML" img={html} />
-        <Tag name="JavaScript" img={javascript} />
-        <Tag name="CSS" img={css} />
-      </ul>
-      <a
-        href={projectData[1].repo}
-        class="projects__repo-button"
-        target="_blank">See Code</a
-      >
-    </Card>
-  </Motion>
+  <Card
+    image={linktrim}
+    link={projectData[1].link}
+    title={projectData[1].title}
+    description={projectData[1].description}>
+    <ul class="projects__tags-list">
+      <Tag name="HTML" img={html} />
+      <Tag name="JavaScript" img={javascript} />
+      <Tag name="CSS" img={css} />
+    </ul>
+    <a href={projectData[1].repo} class="projects__repo-button" target="_blank"
+      >See Code</a
+    >
+  </Card>
 </ul>
 
 <style>

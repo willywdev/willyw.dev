@@ -1,14 +1,16 @@
 ---
 import Motion from "../Motion/Motion";
+const currentYear = new Date().getFullYear();
 ---
 
 <section class="buildwith">
-  <article class="buildwith__tech">
-    <p>Astro</p>
-    <p>React</p>
-    <p>Vercel</p>
-    <p>Github</p>
-  </article>
+  <ul class="buildwith__tech">
+    <li>Astro</li>
+    <li>React</li>
+    <li>Vercel</li>
+    <li>Github</li>
+    <li>Framer Motion</li>
+  </ul>
   <Motion client:load>
     <article class="contributions">
       <p>
@@ -21,6 +23,11 @@ import Motion from "../Motion/Motion";
           >Uniconlabs</a
         >
       </p>
+    </article>
+  </Motion>
+  <Motion client:load>
+    <article>
+      <p>A lot of ❤️ by © willywdev {currentYear}</p>
     </article>
   </Motion>
 </section>

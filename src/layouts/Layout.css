@@ -32,17 +32,27 @@ code {
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 body {
-  margin-top: 15%;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0.4rem;
+  color: white;
 }
-
-@media (min-width: 570px) {
-  .card {
-    min-height: 385px;
-  }
-  body {
-    margin-top: 5%;
-  }
+::selection {
+  color: white;
+  background: rgb(151, 61, 61);
+}
+a {
+  all: unset;
+  cursor: pointer;
+}
+a::hover {
+  color: var(--accent);
+}
+.main__headlines-small {
+  font-size: 1.5rem;
+  align-self: flex-start;
+  justify-self: flex-start;
+  margin: 0.5rem 1rem;
 }
