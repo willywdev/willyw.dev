@@ -59,7 +59,7 @@ a::hover {
 }
 @media (min-width: 700px) {
   body {
-    margin: 5% auto;
+    margin: 5% auto 0 auto;
     padding: 0 5rem;
     overflow-x: hidden;
   }
