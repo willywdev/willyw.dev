@@ -1,30 +1,19 @@
 ---
-
+const { page } = Astro.props;
 ---
-
-<script>
-  const nav = document.querySelector("nav");
-  const navLinks = nav.querySelectorAll("a");
-  const currentURL = window.location.href;
-  navLinks.forEach((link) => {
-    if (link.href === currentURL) {
-      link.classList.add("active");
-    }
-  });
-</script>
 
 <nav>
   <ul class="pager">
     <a href="/">
-      <li>Home</li>
+      {page === "index" ? <li class="active">Home</li> : <li>Home</li>}
     </a>
     <span class="bar">|</span>
     <a href="/blog">
-      <li>Blog</li>
+      {page === "blog" ? <li class="active">Blog</li> : <li>Blog</li>}
     </a>
     <span class="bar">|</span>
     <a href="/more">
-      <li>More</li>
+      {page === "more" ? <li class="active">More</li> : <li>More</li>}
     </a>
   </ul>
 </nav>

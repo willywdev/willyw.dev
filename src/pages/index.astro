@@ -2,6 +2,7 @@
 import Aboutme from "../components/AboutMe/Aboutme.astro";
 import Contact from "../components/Contact/Contact.astro";
 import Divider from "../components/Divider/Divider.astro";
+import Navbar from "../components/Navbar/Navbar.astro";
 import Projects from "../components/Projects/Projects.astro";
 import Skills from "../components/Skills/Skills.astro";
 import Layout from "../layouts/Layout.astro";
@@ -26,6 +27,7 @@ import Layout from "../layouts/Layout.astro";
     <h2 class="main__headlines-small">Build with</h2>
   </main>
 </Layout>
+<Navbar page="index" />
 
 <style is:global>
   .contact__wrapper {
