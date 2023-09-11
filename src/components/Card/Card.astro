@@ -5,7 +5,7 @@ import Image from "astro/components/Image.astro";
 
 <li class="card">
   <a href={link} target="_blank" class="card__link">
-    <Image class="project-image" src={image} alt={title} />
+    {image && <Image class="project-image" src={image} alt={title} />}
     <h2 class="card__title">
       {title}
       <span> &rarr;</span>
