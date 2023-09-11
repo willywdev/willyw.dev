@@ -1,43 +1,30 @@
 ---
-const currentSlug = Astro.props;
+
 ---
+
+<script>
+  const nav = document.querySelector("nav");
+  const navLinks = nav.querySelectorAll("a");
+  const currentURL = window.location.href;
+  navLinks.forEach((link) => {
+    if (link.href === currentURL) {
+      link.classList.add("active");
+    }
+  });
+</script>
 
 <nav>
   <ul class="pager">
     <a href="/">
-      {
-        !currentSlug ? (
-          <span class="current">
-            <li>Home</li>
-          </span>
-        ) : (
-          <li>Home</li>
-        )
-      }
+      <li>Home</li>
     </a>
     <span class="bar">|</span>
     <a href="/blog">
-      {
-        currentSlug === "blog" ? (
-          <span class="current">
-            <li>Blog</li>
-          </span>
-        ) : (
-          <li>Blog</li>
-        )
-      }
+      <li>Blog</li>
     </a>
     <span class="bar">|</span>
     <a href="/more">
-      {
-        currentSlug === "more" ? (
-          <span class="current">
-            <li>More</li>
-          </span>
-        ) : (
-          <li>More</li>
-        )
-      }
+      <li>More</li>
     </a>
   </ul>
 </nav>
@@ -75,11 +62,11 @@ const currentSlug = Astro.props;
     color: rgb(var(--accent-light));
     transform: scale(1.1);
   }
-  .current {
+  .active {
     color: rgb(var(--accent-light));
     width: min-content;
   }
-  .current::after {
+  .active::after {
     content: ".";
     position: absolute;
     font-size: 2rem;
