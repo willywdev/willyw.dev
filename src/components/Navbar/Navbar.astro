@@ -1,8 +1,5 @@
 ---
-const url = Astro.request.url;
-const urlArray = url.split("/");
-const currentSlug = urlArray[urlArray.length - 1];
-console.log(currentSlug);
+const currentSlug = Astro.props;
 ---
 
 <nav>
