@@ -57,3 +57,16 @@ a::hover {
   justify-self: flex-start;
   margin: 0.5rem 1rem;
 }
+@media (min-width: 700px) {
+  body {
+    margin: 5% auto;
+    padding: 0 5rem;
+    overflow-x: hidden;
+  }
+}
+@media (min-width: 1000px) {
+  body {
+    margin-top: 2%;
+    padding: 0 30%;
+  }
+}

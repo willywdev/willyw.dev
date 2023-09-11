@@ -44,8 +44,8 @@ import reactSVG from "./svg/react-original.svg";
 
 <style>
   .projects__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    display: flex;
+    flex-direction: column;
     padding: 0;
   }
   .projects__tags-list {
@@ -77,5 +77,10 @@ import reactSVG from "./svg/react-original.svg";
   .projects__repo-button:hover {
     color: white;
     background: rgba(0, 0, 0, 0.4);
+  }
+  @media (min-width: 582px) {
+    .projects__list {
+      flex-direction: row;
+    }
   }
 </style>
