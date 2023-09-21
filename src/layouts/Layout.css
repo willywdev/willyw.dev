@@ -68,6 +68,6 @@ a::hover {
 @media (min-width: 1000px) {
   body {
     margin-top: 2%;
-    padding: 0 30%;
+    padding: 0 25%;
   }
 }
