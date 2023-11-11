@@ -10,22 +10,22 @@ import javascript from "./svg/javascript-original.svg";
 import reactSVG from "./svg/react-original.svg";
 ---
 
-<ul role="list" class="projects__list">
+<ul role='list' class='projects__list'>
   <Card
     image={linkster}
     link={projectData[0].link}
     title={projectData[0].title}
     description={projectData[0].description}>
-    <div class="projects__bottom-bar">
-      <ul class="projects__tags-list">
-        <Tag name="React" img={reactSVG} />
-        <Tag name="JavaScript" img={javascript} />
-        <Tag name="CSS" img={css} />
+    <div class='projects__bottom-bar'>
+      <ul class='projects__tags-list'>
+        <Tag name='React' img={reactSVG} />
+        <Tag name='JavaScript' img={javascript} />
+        <Tag name='CSS' img={css} />
       </ul>
       <a
         href={projectData[0].repo}
-        class="projects__repo-button"
-        target="_blank">See Code</a
+        class='projects__repo-button'
+        target='_blank'>See Code</a
       >
     </div>
   </Card>
@@ -35,16 +35,35 @@ import reactSVG from "./svg/react-original.svg";
     link={projectData[1].link}
     title={projectData[1].title}
     description={projectData[1].description}>
-    <div class="projects__bottom-bar">
-      <ul class="projects__tags-list">
-        <Tag name="HTML" img={html} />
-        <Tag name="JavaScript" img={javascript} />
-        <Tag name="CSS" img={css} />
+    <div class='projects__bottom-bar'>
+      <ul class='projects__tags-list'>
+        <Tag name='HTML' img={html} />
+        <Tag name='JavaScript' img={javascript} />
+        <Tag name='CSS' img={css} />
       </ul>
       <a
         href={projectData[1].repo}
-        class="projects__repo-button"
-        target="_blank">See Code</a
+        class='projects__repo-button'
+        target='_blank'>See Code</a
+      >
+    </div>
+  </Card>
+
+  <Card
+    image={linktrim}
+    link={projectData[2].link}
+    title={projectData[2].title}
+    description={projectData[2].description}>
+    <div class='projects__bottom-bar'>
+      <ul class='projects__tags-list'>
+        <Tag name='HTML' img={html} />
+        <Tag name='JavaScript' img={javascript} />
+        <Tag name='CSS' img={css} />
+      </ul>
+      <a
+        href={projectData[2].repo}
+        class='projects__repo-button'
+        target='_blank'>See Code</a
       >
     </div>
   </Card>
