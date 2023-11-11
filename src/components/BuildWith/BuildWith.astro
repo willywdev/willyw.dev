@@ -1,6 +1,6 @@
 ---
 // Imports
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Motion from "../Motion/Motion";
 import AstroLogo from "./img/astro-logo-light-gradient.svg";
 import FramerLogo from "./img/framer-logos-idw9i4bXTg.svg";
@@ -11,25 +11,25 @@ import VercelLogo from "./img/vercel-logotype-light.png";
 const currentYear = new Date().getFullYear();
 ---
 
-<section class="buildwith">
+<section class='buildwith'>
   <Motion client:load>
-    <article class="buildwith__tech">
-      <Image src={AstroLogo} alt="Astro logo" class="buildwith__logos" />
-      <Image src={ReactLogo} alt="React logo" class="buildwith__logos" />
-      <Image src={VercelLogo} alt="Vercel logo" class="buildwith__logos" />
-      <Image src={GithubLogo} alt="Github logo" class="buildwith__logos" />
-      <Image src={FramerLogo} alt="Framer logo" class="buildwith__logos" />
+    <article class='buildwith__tech'>
+      <Image src={AstroLogo} alt='Astro logo' class='buildwith__logos' />
+      <Image src={ReactLogo} alt='React logo' class='buildwith__logos' />
+      <Image src={VercelLogo} alt='Vercel logo' class='buildwith__logos' />
+      <Image src={GithubLogo} alt='Github logo' class='buildwith__logos' />
+      <Image src={FramerLogo} alt='Framer logo' class='buildwith__logos' />
     </article>
   </Motion>
   <Motion client:load>
-    <article class="contributions">
-      <p class="freepik">
+    <article class='contributions'>
+      <p class='freepik'>
         Icons by <a
-          href="https://www.freepik.com/icon/github_733553#fromView=search&term=github&page=1&position=3"
+          href='https://www.freepik.com/icon/github_733553#fromView=search&term=github&page=1&position=3'
           >Pixel perfect</a
         > and
         <a
-          href="https://www.freepik.com/icon/email_3686989#fromView=search&term=mail&page=1&position=45"
+          href='https://www.freepik.com/icon/email_3686989#fromView=search&term=mail&page=1&position=45'
           >Uniconlabs</a
         > on freepik
       </p>
