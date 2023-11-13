@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Geist";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("/fonts/GeistVariableVF.woff2") format("woff2");
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Geist";
+  color: #fafafa;
+}
