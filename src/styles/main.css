@@ -23,4 +23,7 @@
 body {
   font-family: "Geist";
   color: #fafafa;
+  background: #202020;
+  background-image: url("/noise.svg");
+  background-attachment: fixed;
 }
