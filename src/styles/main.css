@@ -26,4 +26,6 @@ body {
   background: #202020;
   background-image: url("/noise.svg");
   background-attachment: fixed;
+  width: 100%;
+  overflow: hidden;
 }

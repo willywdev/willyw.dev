@@ -1,10 +1,49 @@
 ---
-import Icon from "astro-icon";
+import Github from "../icons/Github.astro";
+import Linkedin from "../icons/Linkedin.astro";
+import Twitter from "../icons/Twitter.astro";
+import Email from "../icons/Email.astro";
+import CV from "../icons/CV.astro";
 ---
 
-<header>
-  <h1>willyw.dev</h1>
-  <section aria-label='Socials'>
-    <a href=''></a><a href=''></a><a href=''></a><a href=''></a>
-  </section>
+<header
+  class='flex flex-col items-center mt-12 animate-fade-up animate-once animate-ease-in-out overflow-hidden'
+  transition:animate='fade'>
+  <h1
+    class='text-5xl font-bold bg-gradient-to-r from-teal-200 to-lime-200 text-transparent bg-clip-text overflow-hidden'>
+    willyw.dev
+  </h1>
+  <!--   <section aria-label='Socials' class='flex gap-4 mt-2'>
+    <a
+      href=''
+      title='Visit my Github'
+      target='_blank'
+      class='opacity-75 hover:opacity-100 animate-wiggle animate-infinite animate-ease-linear'
+      ><Github /></a
+    >
+    <a
+      href=''
+      title='Visit my LinkedIn'
+      target='_blank'
+      class='opacity-75 hover:opacity-100'><Linkedin /></a
+    >
+    <a
+      href=''
+      title='Visit my Twitter / X'
+      target='_blank'
+      class='opacity-75 hover:opacity-100'><Twitter /></a
+    >
+    <a
+      href=''
+      title='Send me an Email'
+      target='_blank'
+      class='opacity-75 hover:opacity-100'><Email /></a
+    >
+    <a
+      href=''
+      title='See my CV'
+      target='_blank'
+      class='opacity-75 hover:opacity-100'><CV /></a
+    >
+  </section> -->
 </header>
