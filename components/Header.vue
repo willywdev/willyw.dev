@@ -2,7 +2,7 @@
 
 <template>
   <header>
-    <h1><span class="colored">willy</span>w.dev</h1>
+    <h1><span class="colored underline">willy</span>w.dev</h1>
     <nav>
       <ul>
         <li>
@@ -45,6 +45,14 @@ h1 {
 
 .colored {
   color: var(--accent);
+}
+
+.underline {
+  background-image: url(/images/underline.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 0.5rem;
+  background-position: 0 105%;
+  transform: scaleX(-1);
 }
 
 ul {
