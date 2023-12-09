@@ -5,8 +5,21 @@
     <h1><span class="colored">willy</span>w.dev</h1>
     <nav>
       <ul>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="https://github.com/willywdev">Github</a></li>
+        <li>
+          <NuxtLink to="https://github.com/willywdev" target="_blank"
+            ><Icon name="fa6-brands:square-github" size="26"
+          /></NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="https://github.com/willywdev" target="_blank"
+            ><Icon name="fa6-brands:linkedin" size="26"
+          /></NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="https://github.com/willywdev" target="_blank"
+            ><Icon name="fa6-brands:square-x-twitter" size="26"
+          /></NuxtLink>
+        </li>
       </ul>
     </nav>
   </header>
@@ -18,15 +31,15 @@
   src: url(/BT-BeauSans-Regular.ttf) format("truetype");
 }
 header {
-  padding: 1.333rem 1.333rem 0 1.333rem;
+  padding: 1.333rem 2rem 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 500;
 }
 
 h1 {
   font-family: "BeauSans";
-  font-smooth: always;
   user-select: none;
 }
 
@@ -38,6 +51,27 @@ ul {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-right: 2rem;
+  opacity: 0.9;
+}
+
+ul:hover {
+  opacity: 1;
+}
+
+ul {
+  transition: opacity 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 0;
+    justify-content: center;
+  }
+  nav {
+    display: none;
+  }
+  h1 {
+    justify-content: center;
+  }
 }
 </style>
