@@ -15,11 +15,15 @@ onMounted(() => {
       easing: "ease",
     });
     return () => {
-      animate("header", {
-        scale: [1, 3.3333],
-        opacity: [1, 0],
-        easing: "ease",
-      });
+      animate(
+        "header",
+        {
+          scale: [1, 3.3333],
+          opacity: [1, 0],
+          easing: "ease",
+        },
+        { margin: "-50%" }
+      );
     };
   });
   window.addEventListener("mousemove", mouseMove);
@@ -37,11 +41,21 @@ function mouseMove(event) {
 
 <template>
   <header>
-    <h1 :style="{ transform: `translate(${mouseX}px, ${mouseY}px)` }">
+    <h1
+      :style="{
+        transform: `translate(${mouseX}px, ${mouseY}px)`,
+        transition: 'transform 0.1s linear',
+        willChange: 'transform',
+      }">
       <span class="colored underline">willy</span>w.dev
     </h1>
     <nav>
-      <ul :style="{ transform: `translate(${mouseX}px, ${mouseY}px)` }">
+      <ul
+        :style="{
+          transform: `translate(${mouseX}px, ${mouseY}px)`,
+          transition: 'transform 0.1s linear',
+          willChange: 'transform',
+        }">
         <li v-for="social in socials">
           <SocialIcon :link="social.url" :name="social.icon" />
         </li>
@@ -66,6 +80,7 @@ header {
 
 h1 {
   user-select: none;
+  opacity: 0.9;
 }
 
 .colored {
@@ -85,14 +100,6 @@ ul {
   align-items: center;
   gap: 1rem;
   opacity: 0.9;
-}
-
-ul:hover {
-  opacity: 1;
-}
-
-ul {
-  transition: opacity 0.2s ease-in-out;
 }
 
 @media (max-width: 768px) {
