@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-icon"],
+  modules: ["nuxt-icon", "@tresjs/nuxt"],
   app: {
     pageTransition: {
       name: "fade",

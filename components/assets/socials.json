@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Github",
+    "url": "https://github.com/willywdev",
+    "icon": "mdi:github"
+  },
+  {
+    "name": "LinkedIn",
+    "url": "",
+    "icon": "mdi:linkedin"
+  },
+  {
+    "name": "Twitter",
+    "url": "",
+    "icon": "mdi:twitter"
+  },
+  {
+    "name": "Email",
+    "url": "mailto:kontakt@willyw.dev",
+    "icon": "mdi:email"
+  }
+]

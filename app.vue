@@ -58,12 +58,13 @@ html {
   font-family: "Geist", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   background: var(--background);
+  overflow-x: hidden;
 }
 
 body {
   color: var(--font-color);
   background-image: url(/images/background.svg);
-  height: 100dvh;
+  height: 500dvh;
   width: 100%;
   background-size: cover;
   background-position: center;
