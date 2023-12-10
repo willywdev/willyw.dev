@@ -1,17 +1,26 @@
 <script setup>
 import SocialIcon from "./SocialIcon.vue";
 import socials from "./assets/socials.json";
-import { animate, spring } from "motion";
+import { animate, inView } from "motion";
 import { onMounted, onUnmounted } from "vue";
 
 let mouseX = ref(0);
 let mouseY = ref(0);
 
 onMounted(() => {
-  const animation = animate("header", {
-    scale: [3.3333, 1],
-    opacity: [0, 1],
-    easing: spring(),
+  inView("header", () => {
+    animate("header", {
+      scale: [3.3333, 1],
+      opacity: [0, 1],
+      easing: "ease",
+    });
+    return () => {
+      animate("header", {
+        scale: [1, 3.3333],
+        opacity: [1, 0],
+        easing: "ease",
+      });
+    };
   });
   window.addEventListener("mousemove", mouseMove);
 });
