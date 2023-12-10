@@ -1,11 +1,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-icon", "@tresjs/nuxt"],
+  modules: ["nuxt-icon", "@tresjs/nuxt", "@nuxtjs/robots"],
   app: {
-    pageTransition: {
-      name: "fade",
-      mode: "out-in",
-    },
     head: {
       title: "Willy's Portfolio",
     },

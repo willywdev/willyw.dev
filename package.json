@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/robots": "latest",
     "nuxt": "^3.8.2",
     "nuxt-icon": "^0.6.7",
     "vue": "^3.3.10",

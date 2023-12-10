@@ -1,6 +1,15 @@
 <script setup>
 import Header from "./components/Header.vue";
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
+import { onMounted } from "vue";
+
+let loading = ref(true);
+
+onMounted(() => {
+  window.onload = () => {
+    loading.value = false;
+  };
+});
 
 useSeoMeta({
   description: "[description]",
@@ -29,8 +38,11 @@ useHead({
 </script>
 
 <template>
-  <SpeedInsights />
-  <Header />
+  <div v-if="loading">Loading ...</div>
+  <div v-else>
+    <SpeedInsights />
+    <Header />
+  </div>
 </template>
 
 <style global>
