@@ -1,24 +1,15 @@
 <script setup>
 import Header from "./components/Header.vue";
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
-import { onMounted } from "vue";
-
-let loading = ref(true);
-
-onMounted(() => {
-  window.onload = () => {
-    loading.value = false;
-  };
-});
 
 useSeoMeta({
-  description: "[description]",
-  ogTitle: "[og:title]",
-  ogDescription: "[og:description]",
+  description: "Software Developer | JavaScript | Fullstack",
+  ogTitle: "willyw.dev",
+  ogDescription: "Software Developer | JavaScript | Fullstack",
   ogImage: "[og:image]",
   ogUrl: "[og:url]",
   twitterTitle: "[twitter:title]",
-  twitterDescription: "[twitter:description]",
+  twitterDescription: "Software Developer | JavaScript | Fullstack",
   twitterImage: "[twitter:image]",
   twitterCard: "summary",
 });
@@ -31,31 +22,30 @@ useHead({
     {
       rel: "icon",
       type: "image/png",
-      href: "/favicon.png",
+      href: "/favicon.ico",
     },
   ],
 });
 </script>
 
 <template>
-  <div v-if="loading">Loading ...</div>
-  <div v-else>
-    <SpeedInsights />
+  <SpeedInsights />
+  <main>
     <Header />
-  </div>
+  </main>
 </template>
 
 <style global>
 :root {
-  --accent: #00cc66;
-  --accent-hover: #00ff99;
+  --accent: #00ffca;
+  --accent-hover: #6bffc1;
   --background: #252422;
   --font-color: #fafafa;
 }
 
 @font-face {
-  font-family: "Geist";
-  src: url(/GeistVariableVF.ttf) format("truetype-variations");
+  font-family: "BeauSans";
+  src: url(/BT-BeauSans-Regular.ttf) format("truetype");
 }
 
 *,
@@ -67,7 +57,7 @@ useHead({
 }
 
 html {
-  font-family: "Geist", Arial, Helvetica, sans-serif;
+  font-family: "BeauSans", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   background: var(--background);
   overflow-x: hidden;
@@ -76,7 +66,7 @@ html {
 body {
   color: var(--font-color);
   background-image: url(/images/background.svg);
-  height: 500dvh;
+  height: 100dvh;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -85,7 +75,7 @@ body {
 a {
   color: var(--font-color);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 
 a:hover {
@@ -94,5 +84,12 @@ a:hover {
 
 ul {
   list-style: none;
+}
+
+@media (min-width: 1024px) {
+  main {
+    width: 44.44444%;
+    margin: 0 auto;
+  }
 }
 </style>
