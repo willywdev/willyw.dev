@@ -19,7 +19,7 @@ onMounted(() => {
         display: ["none", "block"],
       },
       {
-        delay: stagger(0.5),
+        delay: 0.5,
         duration: 0.6,
       }
     ).finished;
@@ -36,7 +36,7 @@ onMounted(() => {
         display: ["none", "block"],
       },
       {
-        delay: stagger(0.5),
+        delay: 0.5,
         duration: 0.6,
       }
     );
@@ -122,6 +122,7 @@ header {
   align-items: center;
   font-weight: 500;
   font-family: "BeauSans";
+  transform-style: preserve-3d;
 }
 
 h1 {
