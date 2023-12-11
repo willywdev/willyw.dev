@@ -1,33 +1,47 @@
 <script setup>
 import SocialIcon from "./SocialIcon.vue";
 import socials from "./assets/socials.json";
-import { animate, inView } from "motion";
+import { animate, inView, spring, stagger } from "motion";
 import { onMounted, onUnmounted } from "vue";
+import { store } from "./store.js";
 
 let mouseX = ref(0);
 let mouseY = ref(0);
 
 onMounted(() => {
-  inView("header", () => {
-    animate(
-      "header",
+  // Title animation
+  inView("header", async () => {
+    await animate(
+      "h1",
       {
-        scale: [3.3333, 1],
-        opacity: [0, 1],
-        easing: "ease",
+        easing: spring(),
+        x: [-200, 33.33333, 0],
+        display: ["none", "block"],
       },
       {
-        delay: 0.7,
+        delay: stagger(0.5),
+        duration: 0.6,
+      }
+    ).finished;
+    store.headerAnimationFinished = true;
+  });
+
+  // Nav animation
+  inView("header", () => {
+    animate(
+      "nav",
+      {
+        easing: spring(),
+        x: [200, -33.33333, 0],
+        display: ["none", "block"],
+      },
+      {
+        delay: stagger(0.5),
+        duration: 0.6,
       }
     );
-    return () => {
-      animate("header", {
-        scale: [1, 3.3333],
-        opacity: [1, 0],
-        easing: "ease",
-      });
-    };
   });
+  // Title color switch animation
   animate(
     "#title",
     {

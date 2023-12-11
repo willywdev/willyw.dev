@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "nuxt-purgecss",
     "@artmizu/nuxt-prometheus",
+    "@vueuse/nuxt",
   ],
   app: {
     head: {

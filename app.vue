@@ -1,5 +1,6 @@
 <script setup>
 import Header from "./components/Header.vue";
+import SlideOne from "./components/SlideOne.vue";
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 
 useSeoMeta({
@@ -32,6 +33,7 @@ useHead({
   <SpeedInsights />
   <main>
     <Header />
+    <SlideOne />
   </main>
 </template>
 

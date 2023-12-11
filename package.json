@@ -13,6 +13,7 @@
     "@artmizu/nuxt-prometheus": "latest",
     "@nuxt/devtools": "latest",
     "@nuxtjs/robots": "latest",
+    "@vueuse/nuxt": "latest",
     "nuxt": "^3.8.2",
     "nuxt-icon": "^0.6.7",
     "nuxt-purgecss": "latest",
