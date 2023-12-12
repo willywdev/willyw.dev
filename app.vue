@@ -3,6 +3,25 @@ import Header from "./components/Header.vue";
 import SlideOne from "./components/SlideOne.vue";
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 
+let mouseX = ref(0);
+let mouseY = ref(0);
+
+onMounted(() => {
+  window.addEventListener("mousemove", mouseMove);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("mousemove", mouseMove);
+});
+
+function mouseMove(event) {
+  mouseX.value = event.clientX / 166.66666;
+  mouseY.value = event.clientY / 166.66666;
+}
+
+provide("mouseX", mouseX);
+provide("mouseY", mouseY);
+
 useSeoMeta({
   description: "Software Developer | JavaScript | Fullstack",
   ogTitle: "willyw.dev",

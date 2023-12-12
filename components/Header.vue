@@ -1,12 +1,12 @@
 <script setup>
 import SocialIcon from "./SocialIcon.vue";
 import socials from "./assets/socials.json";
-import { animate, inView, spring, stagger } from "motion";
-import { onMounted, onUnmounted } from "vue";
+import { animate, inView, spring } from "motion";
+import { onMounted } from "vue";
 import { store } from "./store.js";
 
-let mouseX = ref(0);
-let mouseY = ref(0);
+const mouseX = inject("mouseX");
+const mouseY = inject("mouseY");
 
 onMounted(() => {
   // Title animation
@@ -67,17 +67,7 @@ onMounted(() => {
     },
     { repeat: Infinity, duration: 33.33 }
   );
-  window.addEventListener("mousemove", mouseMove);
 });
-
-onUnmounted(() => {
-  window.removeEventListener("mousemove", mouseMove);
-});
-
-function mouseMove(event) {
-  mouseX.value = event.clientX / 166.66666;
-  mouseY.value = event.clientY / 166.66666;
-}
 </script>
 
 <template>
@@ -105,6 +95,7 @@ function mouseMove(event) {
       <ul
         :style="{
           transform: `translate(${mouseX}px, ${mouseY}px)`,
+          filter: 'contrast(150%) saturate(150%)',
         }">
         <li v-for="social in socials">
           <SocialIcon :link="social.url" :name="social.icon" />
@@ -122,7 +113,6 @@ header {
   align-items: center;
   font-weight: 500;
   font-family: "BeauSans";
-  transform-style: preserve-3d;
 }
 
 h1 {
