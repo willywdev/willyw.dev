@@ -104,6 +104,10 @@ a {
   transition: color 0.5s ease-in-out;
 }
 
+a:visited {
+  color: var(--font-color);
+}
+
 a:hover {
   color: var(--accent);
 }
