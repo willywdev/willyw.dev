@@ -72,16 +72,24 @@ watch(
 </template>
 
 <style scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 section {
   padding: 3rem 2rem;
   overflow: hidden;
   position: relative;
+  margin-bottom: -3rem;
 }
 .typewriter {
   background: #111111;
   padding: 1rem;
-  position: fixed;
-  width: 100%;
+  margin-left: -2rem;
+
+  width: 100dvw;
   left: 0;
   box-shadow: 0px 20px 40px -20px rgb(5, 5, 5) inset,
     0px -10px 20px -10px rgb(5, 5, 5) inset;
@@ -95,10 +103,9 @@ h2 {
 
 .second-section {
   height: 100vh;
-  margin-top: 3.4rem;
-
   width: 100dvw;
   position: relative;
+  overflow: hidden;
 }
 
 .line {

@@ -50,10 +50,10 @@ useHead({
 
 <template>
   <SpeedInsights />
-  <main>
+  <section id="slide-one">
     <Header />
     <SlideOne />
-  </main>
+  </section>
 </template>
 
 <style global>
