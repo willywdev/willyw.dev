@@ -69,6 +69,11 @@ useHead({
   src: url(/BT-BeauSans-Regular.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "HubotSans";
+  src: url(/Hubot-Sans.woff2) format("woff2");
+}
+
 *,
 *::before,
 *::after {
@@ -105,6 +110,10 @@ a:hover {
 
 ul {
   list-style: none;
+}
+
+h2 {
+  font-family: "HubotSans";
 }
 
 @media (min-width: 1024px) {

@@ -1,11 +1,8 @@
 <script setup>
 import { watch } from "vue";
-import { animate } from "motion";
+import { animate, spring } from "motion";
 import { store } from "./store.js";
 import VueWriter from "vue-writer";
-
-const mouseX = inject("mouseX");
-const mouseY = inject("mouseY");
 
 const vueWriterArray = [
   "Web Magician",
@@ -24,12 +21,31 @@ watch(
       await animate(
         ".typewriter",
         {
-          y: [2000, 0],
-          display: ["none", "block"],
+          scale: [0, 1],
+        },
+        {
+          duration: 0.3333,
+        }
+      ).finished;
+      await animate(
+        ".is-typed",
+        {
           opacity: [0, 1],
         },
         {
-          duration: 0.6,
+          duration: 0.3333,
+        }
+      ).finished;
+      await animate(
+        ".line",
+        {
+          width: ["0px", "3px"],
+          opacity: [0, 1],
+          height: [0, "500px"],
+          easing: spring(),
+        },
+        {
+          duration: 1,
         }
       ).finished;
     }
@@ -39,36 +55,57 @@ watch(
 
 <template>
   <section>
-    <div
-      class="typewriter"
-      :style="{
-        transform: `translate(${mouseX}px, ${mouseY}px)`,
-      }">
-      <h2 v-show="store.headerAnimationFinished">
+    <div class="typewriter" v-show="store.headerAnimationFinished">
+      <h2>
         <VueWriter
           :array="vueWriterArray"
           :typeSpeed="53.3333"
-          :eraseSpeed="33.333" />
+          :eraseSpeed="33.333"
+          caret="underscore"
+          class="textWriter" />
       </h2>
     </div>
+  </section>
+  <section class="second-section">
+    <div class="line"></div>
   </section>
 </template>
 
 <style scoped>
 section {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   overflow: hidden;
   position: relative;
 }
-.black-bar {
-  background: black;
+.typewriter {
+  background: #111111;
+  padding: 1rem;
   position: fixed;
-  height: 5rem;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 20px 40px -20px rgb(5, 5, 5) inset,
+    0px -10px 20px -10px rgb(5, 5, 5) inset;
 }
+
 h2 {
   text-align: center;
   display: inline;
   font-size: 3rem;
-  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
+}
+
+.second-section {
+  height: 100vh;
+  margin-top: 3.4rem;
+
+  width: 100dvw;
+  position: relative;
+}
+
+.line {
+  width: 0;
+  height: 5px;
+  background: #111111;
+  position: absolute;
+  top: 0;
 }
 </style>
