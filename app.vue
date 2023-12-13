@@ -15,8 +15,10 @@ onUnmounted(() => {
 });
 
 function mouseMove(event) {
-  mouseX.value = event.clientX / 166.66666;
-  mouseY.value = event.clientY / 166.66666;
+  if (window.innerWidth > 768) {
+    mouseX.value = event.clientX / 166.66666;
+    mouseY.value = event.clientY / 166.66666;
+  }
 }
 
 provide("mouseX", mouseX);
@@ -87,6 +89,7 @@ html {
   line-height: 1.5;
   background: var(--background);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -120,10 +123,8 @@ h2 {
   font-family: "HubotSans";
 }
 
-@media (min-width: 1024px) {
-  main {
-    width: 44.44444%;
-    margin: 0 auto;
-  }
+.slide-one {
+  max-height: 100vh;
+  max-width: 100vw;
 }
 </style>

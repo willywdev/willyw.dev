@@ -32,7 +32,6 @@ onMounted(() => {
       {
         easing: spring(),
         x: [500, -33.33333, 0],
-        display: "block",
       },
       {
         delay: 0.5,
@@ -101,12 +100,15 @@ onMounted(() => {
 
 <style scoped>
 header {
-  padding: 1.333rem 2rem 0 2rem;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
   font-family: "BeauSans";
+  font-size: 1.333rem;
 }
 
 h1 {
