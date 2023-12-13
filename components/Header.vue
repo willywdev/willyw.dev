@@ -7,14 +7,16 @@ import { store } from "./store.js";
 
 const mouseX = inject("mouseX");
 const mouseY = inject("mouseY");
+const innerWidth = ref(0);
 
 onMounted(() => {
   // Title animation
+  innerWidth.value = window.innerWidth;
   inView("header", async () => {
     await animate(
       "h1",
       {
-        x: [-500, 33.33333, 0],
+        x: [-1000, 33.33333, 0],
         display: "flex",
       },
       {
@@ -31,7 +33,7 @@ onMounted(() => {
       "nav",
       {
         easing: spring(),
-        x: [500, -33.33333, 0],
+        x: [1000, -33.33333, 0],
       },
       {
         delay: 0.5,
@@ -72,7 +74,7 @@ onMounted(() => {
   <header>
     <div
       :style="{
-        transform: `translate(${mouseX}px, ${mouseY}px)`,
+        transform: innerWidth > 768 && `translate(${mouseX}px, ${mouseY}px)`,
       }">
       <h1>
         <span class="colored" id="title">
@@ -87,7 +89,7 @@ onMounted(() => {
     <nav>
       <ul
         :style="{
-          transform: `translate(${mouseX}px, ${mouseY}px)`,
+          transform: innerWidth > 768 && `translate(${mouseX}px, ${mouseY}px)`,
           filter: 'contrast(150%) saturate(150%)',
         }">
         <li v-for="social in socials">
@@ -136,9 +138,17 @@ ul {
   filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
 }
 
+@media (max-width: 1024px) {
+  header {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   header {
-    padding: 1rem 0;
+    padding-top: 1rem;
+    margin-bottom: -1rem;
     justify-content: center;
   }
   nav {

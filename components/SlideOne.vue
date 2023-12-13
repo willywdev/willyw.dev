@@ -25,7 +25,7 @@ watch(
           opacity: [0, 1],
         },
         {
-          duration: 0.3333,
+          duration: 0.5,
         }
       ).finished;
     }
@@ -67,5 +67,11 @@ h2 {
   text-align: center;
   display: inline;
   font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+  }
 }
 </style>
