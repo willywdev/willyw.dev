@@ -10,14 +10,27 @@ export default {
 
 <template>
   <NuxtLayout>
-    <Header />
-    <LazyNuxtPage />
+    <div class="page-container">
+      <Header />
+      <LazyNuxtPage />
+    </div>
   </NuxtLayout>
 </template>
 
 <style is:global>
 @import url("@/assets/fonts/font.css");
-
+* {
+  padding: 0;
+  margin: 0;
+}
+section {
+  position: fixed;
+  height: 70vh;
+  background-color: #000;
+  width: 100vw;
+  left: 0;
+  margin-top: -3rem;
+}
 body {
   padding: 14px;
 }
