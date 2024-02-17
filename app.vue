@@ -13,4 +13,10 @@ export default {
   <Header />
 </template>
 
-<style is:global></style>
+<style is:global>
+body {
+  margin-top: 2rem;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+</style>

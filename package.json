@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "willywdev",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,8 +15,8 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@formkit/auto-animate": "latest",
     "@nuxt/image": "latest",
-    "@nuxt/ui": "latest",
     "nuxt-icon": "latest"
   }
 }
