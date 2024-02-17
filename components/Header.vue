@@ -33,7 +33,17 @@ export default {
       </span>
     </button>
   </header>
-  <div v-if="isMenuOpen"><nav></nav></div>
+  <transition>
+    <div v-if="isMenuOpen">
+      <nav>
+        <NuxtLink to="">Home</NuxtLink>
+        <NuxtLink to="">Downloads</NuxtLink>
+        <NuxtLink to="https://github.com/willywdev" target="_blank"
+          >Github</NuxtLink
+        >
+      </nav>
+    </div>
+  </transition>
 </template>
 
 <style scoped>
@@ -52,5 +62,22 @@ header {
 img {
   width: 50px;
   height: auto;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.333s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

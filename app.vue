@@ -10,7 +10,10 @@ export default {
 </script>
 
 <template>
-  <Header />
+  <NuxtLayout>
+    <Header />
+    <LazyNuxtPage />
+  </NuxtLayout>
 </template>
 
 <style is:global>
@@ -18,5 +21,12 @@ body {
   margin-top: 2rem;
   margin-left: 18%;
   margin-right: 18%;
+}
+a {
+  all: unset;
+  cursor: pointer;
+}
+a:hover {
+  text-shadow: 1px 1px 5px #ffffff7b, 1px 1px 5px #cccccc82;
 }
 </style>

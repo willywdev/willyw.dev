@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-icon", "@nuxt/image", "@formkit/auto-animate"],
+  modules: ["nuxt-icon", "@nuxt/image"],
+  build: {
+    analyze: true,
+  },
 });
