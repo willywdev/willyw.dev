@@ -1,7 +1,10 @@
 <script>
-import "@/assets/styles/hamburgers.css";
+import Nav from "./Nav.vue";
 
 export default {
+  components: {
+    Nav,
+  },
   data() {
     return {
       isMenuOpen: false,
@@ -14,7 +17,7 @@ export default {
   },
   computed: {
     hamburgerClasses() {
-      return `hamburger hamburger--elastic   ${
+      return `mobile-nav hamburger hamburger--elastic   ${
         !this.isMenuOpen ? "" : "is-active"
       }`;
     },
@@ -32,21 +35,16 @@ export default {
         <span class="hamburger-inner"></span>
       </span>
     </button>
+    <div class="desktop-nav"><Nav /></div>
   </header>
   <transition>
-    <div v-if="isMenuOpen">
-      <nav>
-        <NuxtLink to="">Home</NuxtLink>
-        <NuxtLink to="">Downloads</NuxtLink>
-        <NuxtLink to="https://github.com/willywdev" target="_blank"
-          >Github</NuxtLink
-        >
-      </nav>
-    </div>
+    <div v-if="isMenuOpen"><Nav /></div>
   </transition>
 </template>
 
 <style scoped>
+@import url("@/assets/styles/hamburgers.css");
+
 header {
   display: flex;
   justify-content: space-between;
@@ -79,5 +77,20 @@ nav {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+.desktop-nav {
+  display: none;
+}
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: block;
+  }
+  .desktop-nav > nav {
+    flex-direction: row;
+    gap: 1.3rem;
+  }
+  .mobile-nav {
+    display: none;
+  }
 }
 </style>

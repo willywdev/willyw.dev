@@ -1,3 +1,3 @@
 <script></script>
-<template><p>Hello World</p></template>
+<template></template>
 <style></style>
