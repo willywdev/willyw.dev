@@ -23,10 +23,10 @@ export default {
 </script>
 <template>
   <header>
-    <NuxtLink class="logo-container" to="/">
-      <NuxtImg src="/logo.svg" alt="Logo" />
+    <a class="logo-container" href=".">
+      <img src="/logo.svg" alt="Logo" />
       <h1>willyw.dev</h1>
-    </NuxtLink>
+    </a>
     <button :class="hamburgerClasses" type="button" @click="triggerMenu">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
