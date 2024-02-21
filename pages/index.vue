@@ -20,12 +20,9 @@ main {
   align-items: center;
   text-align: center;
 }
-h3 {
-  margin-top: 16px;
-}
 
 .landing-img {
-  margin-top: 64px;
+  margin-top: 24px;
   width: 100%;
   filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
     drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));

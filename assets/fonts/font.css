@@ -1,31 +1,29 @@
 @font-face {
-  font-family: "UbuntuMono Regular";
-  src: url(./UbuntuMono-Regular.ttf);
+  font-family: "Cascadia Code";
+  src: url(./CascadiaCode.woff2);
 }
 
 html {
-  font-family: "UbuntuMono Regular";
+  font-family: "Cascadia Code";
   color: #faf8f8;
 }
 
-body {
-  background: linear-gradient(90deg, #603693, #ba3d1e);
-}
-
 h1 {
+  font-size: 1.2rem;
   filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
     drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  font-weight: 500;
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 1.8rem;
   color: white;
   filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
     drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.25rem;
   opacity: 0.8;
   filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
     drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));

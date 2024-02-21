@@ -58,7 +58,7 @@ header {
   align-items: center;
 }
 img {
-  width: 50px;
+  width: 32px;
   height: auto;
 }
 nav {
@@ -67,7 +67,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .v-enter-active,
 .v-leave-active {
