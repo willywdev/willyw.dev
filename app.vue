@@ -10,15 +10,14 @@ export default {
 
 <template>
   <NuxtLayout>
-    <div class="first-slide">
+    <main>
       <Header />
       <LazyNuxtPage />
-    </div>
+    </main>
   </NuxtLayout>
 </template>
 
 <style is:global>
-@import url("@/assets/fonts/font.css");
 html {
   scroll-behavior: smooth;
   background: linear-gradient(
@@ -42,37 +41,42 @@ html {
   );
   background-color: #1e1e1e;
 }
-* {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 body {
+  width: 100vw;
   padding: 12px;
 }
-.first-slide {
-  max-height: 100vh;
-  overflow: hidden;
+main {
+  width: 100%;
 }
 a {
   all: unset;
   cursor: pointer;
 }
-a:hover {
-  text-shadow: 1px 1px 5px #ffffff7b, 1px 1px 5px #cccccc82;
+hr {
+  color: #ede7e7;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 @media (min-width: 768px) {
   body {
     padding-left: 20%;
     padding-right: 20%;
-    padding-top: 32px;
+    padding-top: 12px;
   }
 }
 @media (min-width: 1024px) {
   body {
     padding-left: 25%;
     padding-right: 25%;
-    padding-top: 32px;
+    padding-top: 16px;
   }
 }
 </style>

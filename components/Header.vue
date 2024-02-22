@@ -43,8 +43,6 @@ export default {
 </template>
 
 <style scoped>
-@import url("@/assets/styles/hamburgers.css");
-
 header {
   display: flex;
   justify-content: space-between;
@@ -60,14 +58,6 @@ header {
 img {
   width: 32px;
   height: auto;
-}
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
 }
 .v-enter-active,
 .v-leave-active {
