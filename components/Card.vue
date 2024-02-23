@@ -13,11 +13,10 @@ export default {
   },
   methods: {
     hexToRGBA,
-    darkenHex,
   },
   computed: {
     borderStyle() {
-      return `1px solid ${darkenHex(this.projectBackground, 200)}`;
+      return `1px solid ${darkenHex(this.projectBackground, 255)}`;
     },
   },
 };
@@ -52,7 +51,6 @@ export default {
 <style scoped>
 article {
   border-radius: 14px;
-  color: var(--dark-color);
 }
 .card-header {
   display: flex;
@@ -61,14 +59,12 @@ article {
   width: 100%;
   background-color: inherit;
   border-radius: 14px 14px 0 0;
-  color: var(--dark-color);
   padding: 8px 4px 8px 12px;
 }
 
 .card-body {
   width: 100%;
   border-radius: 0 0 14px 14px;
-  color: var(--dark-color);
   padding: 8px 12px 8px 12px;
   display: flex;
   justify-content: space-between;
@@ -78,14 +74,15 @@ article {
 .icon-container {
   background-color: var(--translucent-dark);
   border-radius: 5px;
-  padding: 3px;
+  padding: 5px;
   border: 1px solid var(--dark-color);
   gap: 1rem;
+  color: var(--light-color);
 }
 
 .project-link-container {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .project-link {
@@ -96,7 +93,6 @@ article {
   background-color: var(--dark-color);
   padding: 8px;
   border-radius: 8px;
-  color: var(--light-color);
   width: 2.5rem;
   height: 2.5rem;
   gap: 3px;
@@ -109,11 +105,10 @@ article {
 }
 
 .project-link * {
-  opacity: 0.5; /* Set the default opacity for children */
-  transition: opacity 0.3s; /* Optional: Adds a transition effect */
+  opacity: 0.5;
 }
 
 .project-link:hover * {
-  opacity: 1; /* Full opacity on hover */
+  opacity: 1;
 }
 </style>

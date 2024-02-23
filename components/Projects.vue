@@ -35,11 +35,5 @@ section {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2.2rem;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 1rem;
 }
 </style>

@@ -1,11 +1,11 @@
 [
   {
-    "projectTitle": "Project Alpha",
-    "projectIcon": "mdi:alpha-a-box",
-    "projectDescription": "This is a detailed description of Project Alpha, showcasing its unique features and benefits.",
-    "projectRepo": "https://github.com/user/project-alpha",
-    "projectLiveLink": "https://example.com/project-alpha",
-    "background": "#A8E6CF"
+    "projectTitle": "Resume API",
+    "projectIcon": "solar:document-add-linear",
+    "projectDescription": "This is a RESTful API providing information about my resume, built with Bun and BaoJS. The API serves various endpoints to access different sections of my resume.",
+    "projectRepo": "https://github.com/willywdev/resumee-api",
+    "projectLiveLink": "https://willywdev.github.io/resumee-api/",
+    "background": "#BE3144"
   },
   {
     "projectTitle": "Beta Exploration",
@@ -13,7 +13,7 @@
     "projectDescription": "Beta Exploration is all about discovering new possibilities. It's a deep dive into what's next.",
     "projectRepo": "https://github.com/user/beta-exploration",
     "projectLiveLink": "https://example.com/beta-exploration",
-    "background": "#FFD3B6"
+    "background": "#2C74B3"
   },
   {
     "projectTitle": "Gamma Generator",
@@ -21,6 +21,6 @@
     "projectDescription": "Generating ideas with Gamma Generator. It's a tool for creative minds looking to bring their visions to life.",
     "projectRepo": "https://github.com/user/gamma-generator",
     "projectLiveLink": "https://example.com/gamma-generator",
-    "background": "#FFAAA5"
+    "background": "#A12568"
   }
 ]

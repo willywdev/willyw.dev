@@ -48,7 +48,7 @@ img {
   image-rendering: crisp-edges;
 }
 section {
-  margin-top: 24px;
+  margin-bottom: 24px;
 }
 @media (min-width: 768px) {
   body {
