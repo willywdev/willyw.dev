@@ -1,11 +1,11 @@
 <template>
   <nav>
-    <NuxtLink to="">home</NuxtLink>
-    <NuxtLink to="">downloads</NuxtLink>
+    <NuxtLink to="">_home</NuxtLink>
+    <NuxtLink to="">_downloads</NuxtLink>
     <NuxtLink to="https://github.com/willywdev" target="_blank"
-      >github</NuxtLink
+      >_github</NuxtLink
     >
-    <nuxt-link to="mailto:kontakt@willyw.dev">mail</nuxt-link>
+    <nuxt-link to="mailto:kontakt@willyw.dev">_mail</nuxt-link>
   </nav>
 </template>
 

@@ -6,5 +6,9 @@ export default defineNuxtConfig({
   build: {
     analyze: true,
   },
-  css: ["/assets/fonts/font.css", "/assets/styles/hamburgers.css"],
+  css: [
+    "/assets/styles/variables.css",
+    "/assets/fonts/font.css",
+    "/assets/styles/hamburgers.css",
+  ],
 });

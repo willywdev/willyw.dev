@@ -1,6 +1,10 @@
 <script>
+import ProjectsVue from "@/components/Projects.vue";
+
 export default {
-  components: {},
+  components: {
+    ProjectsVue,
+  },
 };
 </script>
 
@@ -8,19 +12,10 @@ export default {
   <Head>
     <title>willyw.dev \ home</title>
   </Head>
-  <hr />
   <section>
-    <h2>turning coffee into code</h2>
-    <h3>software developer</h3>
+    <h2>>_ software developer</h2>
   </section>
-  <hr />
+  <ProjectsVue />
 </template>
-<style scoped>
-section {
-  margin-top: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-</style>
+
+<style scoped></style>

@@ -27,7 +27,7 @@ export default {
 <template>
   <header>
     <a class="logo-container" href=".">
-      <img src="/logo.svg" alt="Logo" />
+      <img src="/img/macavatar.webp" alt="Logo" />
       <h1>willyw.dev</h1>
     </a>
     <button :class="hamburgerClasses" type="button" @click="triggerMenu">
@@ -44,6 +44,7 @@ export default {
 
 <style scoped>
 header {
+  margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,11 +53,11 @@ header {
   all: unset;
   cursor: pointer;
   display: flex;
-  gap: 5px;
+  gap: 12px;
   align-items: center;
 }
 img {
-  width: 32px;
+  width: 100px;
   height: auto;
 }
 .v-enter-active,

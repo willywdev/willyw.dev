@@ -1,30 +1,38 @@
 @font-face {
-  font-family: "Cascadia Code";
-  src: url(./CascadiaCode.woff2);
+  font-family: "Ubuntu";
+  src: url(./Ubuntu-R.ttf);
+}
+
+@font-face {
+  font-family: "Jetbrains Mono";
+  src: url(./JetBrainsMono-Regular.woff2);
 }
 
 html {
-  font-family: "Cascadia Code";
-  color: #faf8f8;
+  font-family: "Ubuntu";
+  color: var(--light-color);
 }
 
-h1 {
-  font-size: 1.2rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
     drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-  font-weight: 500;
+  font-family: "Jetbrains Mono";
+  font-size: 1.2rem;
 }
 
 h2 {
   font-size: 1.8rem;
-  color: white;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 }
 
 h3 {
-  font-size: 1.25rem;
-  opacity: 0.8;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  font-family: "Ubuntu";
+}
+
+nav {
+  font-family: "Jetbrains Mono";
 }
