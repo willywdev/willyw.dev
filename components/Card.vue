@@ -1,6 +1,5 @@
 <script>
 import { hexToRGBA } from "#imports";
-import darkenHex from "@/utils/darkenHex";
 
 export default {
   props: {
