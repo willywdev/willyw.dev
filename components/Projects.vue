@@ -16,16 +16,30 @@ export default {
 
 <template>
   <section>
-    <Card v-for="project in projects" :key="project.projectTitle">
-      <Icon :name="project.projectIcon" />
-      <h4>{{ project.projectTitle }}</h4>
-      <p>{{ project.projectDescription }}</p>
-      <nuxt-link :to="project.projectRepo">Repo</nuxt-link>
-      <nuxt-link :to="project.projectLiveLink"
-        ><Icon name="codicon:repo" />Demo</nuxt-link
-      >
-    </Card>
+    <h2>>_ projects</h2>
+    <article v-for="project in projects" :key="project.projectTitle">
+      <Card
+        :projectBackground="project.background"
+        :projectIcon="project.projectIcon"
+        :projectTitle="project.projectTitle"
+        :projectDescription="project.projectDescription"
+        :projectRepo="project.projectRepo"
+        :projectLiveLink="project.projectLiveLink" />
+    </article>
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.2rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+</style>

@@ -4,41 +4,23 @@
     "projectIcon": "mdi:alpha-a-box",
     "projectDescription": "This is a detailed description of Project Alpha, showcasing its unique features and benefits.",
     "projectRepo": "https://github.com/user/project-alpha",
-    "projectLiveLink": "https://example.com/project-alpha"
+    "projectLiveLink": "https://example.com/project-alpha",
+    "background": "#A8E6CF"
   },
   {
     "projectTitle": "Beta Exploration",
     "projectIcon": "mdi:beta",
     "projectDescription": "Beta Exploration is all about discovering new possibilities. It's a deep dive into what's next.",
     "projectRepo": "https://github.com/user/beta-exploration",
-    "projectLiveLink": "https://example.com/beta-exploration"
+    "projectLiveLink": "https://example.com/beta-exploration",
+    "background": "#FFD3B6"
   },
   {
     "projectTitle": "Gamma Generator",
     "projectIcon": "mdi:gamma",
     "projectDescription": "Generating ideas with Gamma Generator. It's a tool for creative minds looking to bring their visions to life.",
     "projectRepo": "https://github.com/user/gamma-generator",
-    "projectLiveLink": "https://example.com/gamma-generator"
-  },
-  {
-    "projectTitle": "Delta Dynamics",
-    "projectIcon": "mdi:delta",
-    "projectDescription": "Delta Dynamics offers a new perspective on workflow automation. Streamline your processes like never before.",
-    "projectRepo": "https://github.com/user/delta-dynamics",
-    "projectLiveLink": "https://example.com/delta-dynamics"
-  },
-  {
-    "projectTitle": "Epsilon Endeavor",
-    "projectIcon": "mdi:epsilon",
-    "projectDescription": "Embark on the Epsilon Endeavor. A journey through the advancements in technology and innovation.",
-    "projectRepo": "https://github.com/user/epsilon-endeavor",
-    "projectLiveLink": "https://example.com/epsilon-endeavor"
-  },
-  {
-    "projectTitle": "Zeta Zone",
-    "projectIcon": "mdi:zodiac-libra",
-    "projectDescription": "Welcome to the Zeta Zone, where the future of entertainment technology is being forged today.",
-    "projectRepo": "https://github.com/user/zeta-zone",
-    "projectLiveLink": "https://example.com/zeta-zone"
+    "projectLiveLink": "https://example.com/gamma-generator",
+    "background": "#FFAAA5"
   }
 ]

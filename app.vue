@@ -38,6 +38,11 @@ a {
   all: unset;
   cursor: pointer;
 }
+a:hover,
+a:active,
+a:focus {
+  color: var(--accent-color);
+}
 img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;

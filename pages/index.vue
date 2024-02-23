@@ -12,9 +12,6 @@ export default {
   <Head>
     <title>willyw.dev \ home</title>
   </Head>
-  <section>
-    <h2>>_ software developer</h2>
-  </section>
   <ProjectsVue />
 </template>
 

@@ -19,8 +19,6 @@ h3,
 h4,
 h5,
 h6 {
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   font-family: "Jetbrains Mono";
   font-size: 1.2rem;
 }

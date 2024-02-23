@@ -28,7 +28,6 @@ export default {
   <header>
     <a class="logo-container" href=".">
       <img src="/img/macavatar.webp" alt="Logo" />
-      <h1>willyw.dev</h1>
     </a>
     <button :class="hamburgerClasses" type="button" @click="triggerMenu">
       <span class="hamburger-box">
