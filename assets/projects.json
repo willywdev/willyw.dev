@@ -1,7 +1,7 @@
 [
   {
     "projectTitle": "Resume API",
-    "projectIcon": "/assets/img/cv.webp",
+    "projectIcon": "",
     "projectDescription": "This is a RESTful API providing information about my resume, built with Bun and BaoJS. The API serves various endpoints to access different sections of my resume.",
     "projectRepo": "https://github.com/willywdev/resumee-api",
     "projectLiveLink": "https://willywdev.github.io/resumee-api/",

@@ -13,16 +13,11 @@ export default {
   methods: {
     hexToRGBA,
   },
-  computed: {
-    borderStyle() {
-      return `1px solid ${darkenHex(this.projectBackground, 255)}`;
-    },
-  },
 };
 </script>
 
 <template>
-  <article :style="{ border: borderStyle }">
+  <article>
     <div class="card-header" :style="{ backgroundColor: projectBackground }">
       <div class="icon-container">
         <Icon :name="projectIcon" size="24" />

@@ -17,6 +17,7 @@
   "devDependencies": {
     "@formkit/auto-animate": "latest",
     "@nuxt/image": "latest",
-    "nuxt-icon": "latest"
+    "nuxt-icon": "latest",
+    "nuxt-purgecss": "latest"
   }
 }
