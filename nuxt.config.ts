@@ -2,7 +2,12 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-icon", "@nuxt/image", "nuxt-purgecss"],
+  modules: [
+    "nuxt-icon",
+    "@nuxt/image",
+    "nuxt-purgecss",
+    "@nuxtjs/fontaine",
+  ],
   build: {
     analyze: true,
   },

@@ -1,17 +1,33 @@
 <script>
 import Card from "./Card.vue";
 import Button from "./Button.vue";
-import projectsData from "@/assets/projects.json";
 
 export default {
   data() {
     return {
-      projects: projectsData,
+      projects: null,
     };
   },
   components: {
     Card,
     Button,
+  },
+  created() {
+    this.fetchProjects();
+  },
+  methods: {
+    async fetchProjects() {
+      try {
+        const { data } = useFetch("/api/projects", {
+          lazy: true,
+          server: true,
+        });
+        this.projects = data;
+      } catch (error) {
+        console.error("There was an error fetching the data: ", error);
+        this.projects = "Error fetching data";
+      }
+    },
   },
 };
 </script>
