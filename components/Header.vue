@@ -29,7 +29,11 @@ export default {
     <a class="logo-container" href=".">
       <img src="/img/macavatar.webp" alt="Logo" />
     </a>
-    <button :class="hamburgerClasses" type="button" @click="triggerMenu">
+    <button
+      :class="hamburgerClasses"
+      type="button"
+      @click="triggerMenu"
+      aria-label="Toggle navigation menu">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
@@ -47,6 +51,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.logo-container:focus,
+.hamburger:focus {
+  outline: 2px solid var(--accent-color);
 }
 .logo-container {
   all: unset;

@@ -1,13 +1,16 @@
 <template>
-  <nav>
-    <NuxtLink to="">_home</NuxtLink>
-    <NuxtLink to="">_downloads</NuxtLink>
+  <nav aria-label="Main navigation">
+    <NuxtLink to=""><span aria-hidden="true">_</span>home</NuxtLink>
+    <NuxtLink to=""><span aria-hidden="true">_</span>downloads</NuxtLink>
+    <NuxtLink to=""><span aria-hidden="true">_</span>skills</NuxtLink>
     <NuxtLink to="https://github.com/willywdev" target="_blank"
-      >_github</NuxtLink
+      ><span aria-hidden="true">_</span>github</NuxtLink
     >
-    <nuxt-link to="mailto:kontakt@willyw.dev">_mail</nuxt-link>
     <nuxt-link to="https://ko-fi.com/willywdev" target="_blank"
-      ><img src="/img/Ko-fi_HEART.gif" class="ko-fi"
+      ><img
+        src="/img/Ko-fi_HEART.gif"
+        class="ko-fi"
+        alt="Buy me a coffee on Ko-fi"
     /></nuxt-link>
   </nav>
 </template>

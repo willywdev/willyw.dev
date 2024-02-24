@@ -13,5 +13,5 @@ export default function convertHexToRGBA(hex) {
   const b = parseInt(hex.substring(4, 6), 16);
 
   // Return the RGBA color string
-  return `rgba(${r}, ${g}, ${b}, 0.8)`;
+  return `rgba(${r}, ${g}, ${b}, 0.85)`;
 }

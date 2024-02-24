@@ -1,5 +1,6 @@
 <script>
 import Card from "./Card.vue";
+import Button from "./Button.vue";
 import projectsData from "@/assets/projects.json";
 
 export default {
@@ -10,13 +11,14 @@ export default {
   },
   components: {
     Card,
+    Button,
   },
 };
 </script>
 
 <template>
   <section>
-    <h2>>_ projects</h2>
+    <h2><span aria-hidden="true">>_</span> projects</h2>
     <article v-for="project in projects" :key="project.projectTitle">
       <Card
         :projectBackground="project.background"
@@ -26,6 +28,7 @@ export default {
         :projectRepo="project.projectRepo"
         :projectLiveLink="project.projectLiveLink" />
     </article>
+    <Button>See more <Icon name="ion:arrow-redo" /></Button>
   </section>
 </template>
 

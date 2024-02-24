@@ -1,19 +1,44 @@
 <script>
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
     Header,
+    Footer,
   },
 };
 </script>
 
 <template>
   <NuxtLayout>
+    <Head>
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+      <meta name="apple-mobile-web-app-title" content="willyw.dev Portfolio" />
+      <meta name="application-name" content="willyw.dev Portfolio" />
+      <meta name="msapplication-TileColor" content="#bfc9f7" />
+      <meta name="theme-color" content="#ffffff" />
+    </Head>
     <main>
       <Header />
       <LazyNuxtPage />
     </main>
+    <Footer />
   </NuxtLayout>
 </template>
 
@@ -50,6 +75,15 @@ img {
 section {
   margin-bottom: 24px;
 }
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5); /* Creates a glow effect with a color that matches your design */
+  transition: box-shadow 0.3s ease; /* Smooth transition for the focus effect */
+}
+
 @media (min-width: 768px) {
   body {
     padding-left: 20%;
