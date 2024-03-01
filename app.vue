@@ -36,9 +36,9 @@ export default {
     </Head>
     <main>
       <Header />
-      <NuxtPage />
+      <LazyNuxtPage />
     </main>
-    <Footer />
+    <LazyFooter />
   </NuxtLayout>
 </template>
 
@@ -82,9 +82,9 @@ a:focus,
 button:focus,
 input:focus,
 textarea:focus {
-  outline: none; /* Removes the default focus outline */
-  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5); /* Creates a glow effect with a color that matches your design */
-  transition: box-shadow 0.3s ease; /* Smooth transition for the focus effect */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+  transition: box-shadow 0.3s ease;
 }
 
 @media (min-width: 768px) {

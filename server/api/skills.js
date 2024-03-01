@@ -1,11 +1,5 @@
-import Pocketbase from "pocketbase";
+import fetchServer from "@/utils/fetchServer";
 
-export default defineEventHandler(async () => {
-  const pb = new Pocketbase("https://pocketbase.caprover.42977775.xyz");
-  try {
-    const records = await pb.collection("skills").getFullList();
-    return records;
-  } catch (error) {
-    return error;
-  }
+export default defineEventHandler(() => {
+  return fetchServer("skills");
 });

@@ -21,7 +21,7 @@ export default {
     <h2>skills</h2>
     <div class="icon-container">
       <Icon
-        v-for="skill in skills.sort()"
+        v-for="skill in skills?.sort()"
         :key="skill.name"
         :name="skill.icon"
         size="44" />
