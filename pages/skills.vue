@@ -24,7 +24,7 @@ export default {
         v-for="skill in skills?.sort()"
         :key="skill.name"
         :name="skill.icon"
-        size="44" />
+        size="52" />
     </div>
   </section>
 </template>
@@ -34,6 +34,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  justify-content: center;
 }
 .icon-container > * {
   flex: 1 0 calc(20%-6px);

@@ -12,4 +12,10 @@ export default {};
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #666;
+}
+</style>
