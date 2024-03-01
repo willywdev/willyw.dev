@@ -1,8 +1,10 @@
 <template>
   <nav aria-label="Main navigation">
-    <NuxtLink to=""><span aria-hidden="true">_</span>home</NuxtLink>
-    <NuxtLink to=""><span aria-hidden="true">_</span>downloads</NuxtLink>
-    <NuxtLink to=""><span aria-hidden="true">_</span>skills</NuxtLink>
+    <NuxtLink to="/"><span aria-hidden="true">_</span>home</NuxtLink>
+    <NuxtLink to="/downloads"
+      ><span aria-hidden="true">_</span>downloads</NuxtLink
+    >
+    <NuxtLink to="/skills"><span aria-hidden="true">_</span>skills</NuxtLink>
     <NuxtLink to="https://github.com/willywdev" target="_blank"
       ><span aria-hidden="true">_</span>github</NuxtLink
     >
@@ -26,5 +28,8 @@ nav {
 }
 .ko-fi {
   width: 44px;
+}
+a:active {
+  transform: translateY(1px);
 }
 </style>

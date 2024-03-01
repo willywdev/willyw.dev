@@ -23,7 +23,6 @@ export default {
           server: true,
         });
         this.projects = data;
-        console.log(this.projects);
       } catch (error) {
         console.error("There was an error fetching the data: ", error);
         this.projects = "Error fetching data";

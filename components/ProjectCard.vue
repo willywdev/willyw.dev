@@ -121,7 +121,9 @@ ul {
 .project-link:hover * {
   opacity: 1;
 }
-
+.project-link:active {
+  transform: translateY(1px);
+}
 ul {
   display: flex;
   gap: 6px;
