@@ -1,7 +1,7 @@
 <script></script>
 <template>
   <section>
-    <h2><span aria-hidden="true">>_</span> developer</h2>
+    <h2>developer</h2>
     <p id="first-paragraph">
       I'm the self-proclaimed code wizard who transforms endless coffee into
       somewhat functional code, with a special love for JavaScript and Rust. My

@@ -23,6 +23,7 @@ export default {
           server: true,
         });
         this.projects = data;
+        console.log(this.projects);
       } catch (error) {
         console.error("There was an error fetching the data: ", error);
         this.projects = "Error fetching data";
@@ -34,7 +35,7 @@ export default {
 
 <template>
   <section>
-    <h2><span aria-hidden="true">>_</span> projects</h2>
+    <h2>projects</h2>
     <article v-for="project in projects" :key="project.projectTitle">
       <Card
         :projectBackground="project.background"
@@ -42,7 +43,8 @@ export default {
         :projectTitle="project.projectTitle"
         :projectDescription="project.projectDescription"
         :projectRepo="project.projectRepo"
-        :projectLiveLink="project.projectLiveLink" />
+        :projectLiveLink="project.projectLiveLink"
+        :techStackIcons="project.techStackIcons" />
     </article>
     <Button>See more <Icon name="ion:arrow-redo" /></Button>
   </section>

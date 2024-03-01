@@ -58,6 +58,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0 auto;
 }
 a {
   all: unset;

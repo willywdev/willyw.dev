@@ -9,6 +9,7 @@ export default {
     projectDescription: String,
     projectRepo: String,
     projectLiveLink: String,
+    techStackIcons: Array,
   },
   methods: {
     hexToRGBA,
@@ -19,10 +20,17 @@ export default {
 <template>
   <article>
     <div class="card-header" :style="{ backgroundColor: projectBackground }">
-      <Icon :name="projectIcon" size="24" />
-      <h4>{{ projectTitle }}</h4>
-      <div class="spacer"></div>
-      <div class="techStack"></div>
+      <div class="projectTitleWithIcon">
+        <Icon :name="projectIcon" size="24" />
+        <h4>{{ projectTitle }}</h4>
+      </div>
+      <div class="techStack">
+        <ul>
+          <li v-for="tech in techStackIcons" :key="tech">
+            <Icon :name="tech" size="26" />
+          </li>
+        </ul>
+      </div>
     </div>
     <div
       class="card-body"
@@ -51,6 +59,7 @@ article {
   display: flex;
   gap: 8px;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   background-color: inherit;
   border-radius: 14px 14px 0 0;
@@ -58,6 +67,22 @@ article {
   -webkit-box-shadow: 0 6px 4px -4px black;
   -moz-box-shadow: 0 6px 4px -4px black;
   box-shadow: 0 6px 4px -4px black;
+}
+.projectTitleWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 1rem;
+  outline: 1px solid rgba(0, 0, 0, 0.35);
 }
 .card-body {
   width: 100%;
