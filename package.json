@@ -19,7 +19,6 @@
     "@formkit/auto-animate": "latest",
     "@nuxt/image": "latest",
     "@nuxtjs/fontaine": "latest",
-    "nuxt-icon": "latest",
-    "nuxt-purgecss": "latest"
+    "nuxt-icon": "latest"
   }
 }

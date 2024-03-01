@@ -1,5 +1,5 @@
 <script>
-import Card from "./Card.vue";
+import ProjectCard from "./ProjectCard.vue";
 import Button from "./Button.vue";
 
 export default {
@@ -9,7 +9,7 @@ export default {
     };
   },
   components: {
-    Card,
+    ProjectCard,
     Button,
   },
   created() {
@@ -36,8 +36,10 @@ export default {
 <template>
   <section>
     <h2>projects</h2>
-    <article v-for="project in projects" :key="project.projectTitle">
-      <Card
+    <article
+      v-for="project in projects.slice(0, 3)"
+      :key="project.projectTitle">
+      <ProjectCard
         :projectBackground="project.background"
         :projectIcon="project.projectIcon"
         :projectTitle="project.projectTitle"

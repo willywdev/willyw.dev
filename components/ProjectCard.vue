@@ -71,7 +71,7 @@ article {
 .projectTitleWithIcon {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 }
 ul {
   list-style-type: none;
@@ -120,5 +120,10 @@ ul {
 }
 .project-link:hover * {
   opacity: 1;
+}
+
+ul {
+  display: flex;
+  gap: 6px;
 }
 </style>
