@@ -1,6 +1,7 @@
 <script>
 import ProjectCard from "./ProjectCard.vue";
 import Button from "./Button.vue";
+import fetchData from "@/utils/fetchData";
 
 export default {
   data() {
@@ -12,22 +13,8 @@ export default {
     ProjectCard,
     Button,
   },
-  created() {
-    this.fetchProjects();
-  },
-  methods: {
-    async fetchProjects() {
-      try {
-        const { data } = useFetch("/api/projects", {
-          lazy: true,
-          server: true,
-        });
-        this.projects = data;
-      } catch (error) {
-        console.error("There was an error fetching the data: ", error);
-        this.projects = "Error fetching data";
-      }
-    },
+  async created() {
+    this.projects = await fetchData("/api/projects");
   },
 };
 </script>
@@ -36,7 +23,7 @@ export default {
   <section>
     <h2>projects</h2>
     <article
-      v-for="project in projects.slice(0, 3)"
+      v-for="project in projects?.slice(0, 3)"
       :key="project.projectTitle">
       <ProjectCard
         :projectBackground="project.background"

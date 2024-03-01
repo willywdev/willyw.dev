@@ -1,5 +1,16 @@
 <script>
-export default {};
+import fetchData from "@/utils/fetchData";
+
+export default {
+  data() {
+    return {
+      skills: null,
+    };
+  },
+  async created() {
+    this.skills = await fetchData("/api/skills");
+  },
+};
 </script>
 
 <template>
@@ -8,7 +19,23 @@ export default {};
   </Head>
   <section>
     <h2>skills</h2>
+    <div class="icon-container">
+      <Icon
+        v-for="skill in skills.sort()"
+        :key="skill.name"
+        :name="skill.icon"
+        size="44" />
+    </div>
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.icon-container > * {
+  flex: 1 0 calc(20%-6px);
+}
+</style>
