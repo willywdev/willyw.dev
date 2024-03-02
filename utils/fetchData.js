@@ -3,7 +3,6 @@ import { useFetch } from "#app";
 export default async function fetchData(url) {
   try {
     const { data } = useFetch(url, {
-      lazy: true,
       server: true,
     });
     return data;

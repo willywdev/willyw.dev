@@ -36,9 +36,9 @@ export default {
     </Head>
     <main>
       <Header />
-      <LazyNuxtPage />
+      <NuxtPage />
     </main>
-    <LazyFooter />
+    <Footer />
   </NuxtLayout>
 </template>
 

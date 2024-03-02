@@ -3,12 +3,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["nuxt-icon", "@nuxt/image", "@nuxtjs/fontaine"],
-  app: {
-    pageTransition: {
-      name: "page",
-      mode: "out-in",
-    },
-  },
   css: [
     "/assets/styles/variables.css",
     "/assets/fonts/font.css",

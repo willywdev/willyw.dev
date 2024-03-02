@@ -8,7 +8,7 @@ export default {
     };
   },
   async created() {
-    this.skills = await fetchData("/api/skills");
+    this.skills = await fetchData("api/skills");
   },
 };
 </script>
@@ -35,8 +35,5 @@ export default {
   flex-wrap: wrap;
   gap: 6px;
   justify-content: center;
-}
-.icon-container > * {
-  flex: 1 0 calc(20%-6px);
 }
 </style>

@@ -6,15 +6,22 @@ import fetchData from "@/utils/fetchData";
 export default {
   data() {
     return {
-      projects: null,
+      projects: [],
+      isLoading: true,
     };
   },
   components: {
     ProjectCard,
     Button,
   },
-  async created() {
-    this.projects = await fetchData("/api/projects");
+  computed: {
+    slicedProjects() {
+      return this.projects ? this.projects.slice(0, 3) : [];
+    },
+  },
+  async asyncData() {
+    const projects = await fetchData("/api/projects");
+    return { projects, isLoading: false };
   },
 };
 </script>
@@ -22,9 +29,8 @@ export default {
 <template>
   <section>
     <h2>projects</h2>
-    <article
-      v-for="project in projects?.slice(0, 3)"
-      :key="project.projectTitle">
+    <div v-if="isLoading">Loading...</div>
+    <div v-else v-for="project in slicedProjects" :key="project.projectTitle">
       <ProjectCard
         :projectBackground="project.background"
         :projectIcon="project.projectIcon"
@@ -33,7 +39,7 @@ export default {
         :projectRepo="project.projectRepo"
         :projectLiveLink="project.projectLiveLink"
         :techStackIcons="project.techStackIcons" />
-    </article>
+    </div>
     <Button>See more <Icon name="ion:arrow-redo" /></Button>
   </section>
 </template>
