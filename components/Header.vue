@@ -41,13 +41,12 @@ export default {
     <div class="desktop-nav"><Nav /></div>
   </header>
   <transition>
-    <div v-if="isMenuOpen"><Nav /></div>
+    <div v-if="isMenuOpen" class="mobile-nav"><Nav /></div>
   </transition>
 </template>
 
 <style scoped>
 header {
-  margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,7 +55,7 @@ header {
   filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
     drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
   padding: 1rem;
-  border-radius: 15px;
+  border-radius: 0 0 15px 15px;
 }
 .logo-container:focus,
 .hamburger:focus {
@@ -84,6 +83,9 @@ img {
 }
 .desktop-nav {
   display: none;
+}
+.mobile-nav {
+  margin-top: 2rem;
 }
 @media (min-width: 768px) {
   .desktop-nav {

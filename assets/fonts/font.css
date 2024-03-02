@@ -1,15 +1,15 @@
 @font-face {
-  font-family: "Ubuntu";
-  src: url(./Ubuntu-R.ttf);
+  font-family: "Archivo";
+  src: url(./Archivo.ttf);
 }
 
 @font-face {
-  font-family: "Jetbrains Mono";
-  src: url(./JetBrainsMono-Regular.woff2);
+  font-family: "IBM";
+  src: url(./IBMPlexMono-Regular.ttf);
 }
 
 html {
-  font-family: "Ubuntu";
+  font-family: "Archivo";
   color: var(--light-color);
 }
 
@@ -19,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Jetbrains Mono";
+  font-family: "IBM";
   font-size: 1.2rem;
 }
 
@@ -27,13 +27,12 @@ h2 {
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 0.7rem;
-  color: var(--accent-color);
 }
 
 h3 {
-  font-family: "Ubuntu";
+  font-family: "Archivo";
 }
 
 nav {
-  font-family: "Jetbrains Mono";
+  font-family: "IBM";
 }

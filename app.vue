@@ -59,20 +59,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   margin: 0 auto;
-  min-height: 100vh;
-}
-html::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/img/brushed-alum.png");
-  background-repeat: repeat;
-  z-index: -1;
-  background-color: var(--dark-color);
-  background-blend-mode: multiply;
 }
 a {
   all: unset;
@@ -89,8 +75,9 @@ img {
 }
 section {
   margin-bottom: 24px;
-  background-color: #161616;
+  background: linear-gradient(180deg, #161616 50%, #1d213f 100%);
   padding: 2rem;
+  margin: 0 1rem;
   border-radius: 15px;
   border: 1px solid #2b2a2a;
   filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
@@ -105,18 +92,13 @@ textarea:focus {
   transition: box-shadow 0.3s ease;
 }
 
-@media (min-width: 768px) {
-  body {
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 12px;
-  }
+/* Breakpoints */
+@media (max-width: 767px) {
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+}
+
 @media (min-width: 1024px) {
-  body {
-    padding-left: 25%;
-    padding-right: 25%;
-    padding-top: 16px;
-  }
 }
 </style>
