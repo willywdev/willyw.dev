@@ -58,9 +58,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  padding-left: 2rem;
-  padding-right: 2rem;
   margin: 0 auto;
+  min-height: 100vh;
+}
+html::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/brushed-alum.png");
+  background-repeat: repeat;
+  z-index: -1;
+  background-color: var(--dark-color);
+  background-blend-mode: multiply;
 }
 a {
   all: unset;
@@ -77,6 +89,12 @@ img {
 }
 section {
   margin-bottom: 24px;
+  background-color: #161616;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid #2b2a2a;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 }
 a:focus,
 button:focus,

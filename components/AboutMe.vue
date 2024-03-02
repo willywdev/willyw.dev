@@ -16,6 +16,9 @@
   </section>
 </template>
 <style>
+section {
+  margin-top: 2rem;
+}
 p {
   font-size: 1.1rem;
   line-height: 1.6;

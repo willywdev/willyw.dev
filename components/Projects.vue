@@ -1,7 +1,7 @@
 <script>
 import ProjectCard from "./ProjectCard.vue";
 import Button from "./Button.vue";
-import fetchData from "@/utils/fetchData";
+import Spinner from "./Spinner.vue";
 
 export default {
   data() {
@@ -13,15 +13,27 @@ export default {
   components: {
     ProjectCard,
     Button,
+    Spinner,
   },
   computed: {
     slicedProjects() {
       return this.projects ? this.projects.slice(0, 3) : [];
     },
   },
-  async asyncData() {
-    const projects = await fetchData("/api/projects");
-    return { projects, isLoading: false };
+  methods: {
+    async fetchProjects() {
+      try {
+        this.projects = await $fetch("/api/projects");
+        this.isLoading = false;
+      } catch (error) {
+        console.error(error);
+        this.projects = [];
+        this.isLoading = true;
+      }
+    },
+  },
+  mounted() {
+    this.fetchProjects();
   },
 };
 </script>
@@ -29,7 +41,7 @@ export default {
 <template>
   <section>
     <h2>projects</h2>
-    <div v-if="isLoading">Loading...</div>
+    <div v-if="isLoading"><Spinner /></div>
     <div v-else v-for="project in slicedProjects" :key="project.projectTitle">
       <ProjectCard
         :projectBackground="project.background"

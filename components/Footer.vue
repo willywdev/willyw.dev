@@ -30,6 +30,13 @@ footer {
   text-align: center;
   margin-bottom: 5px;
   opacity: 0.9;
+  background-color: #161616;
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 1px solid #2b2a2a;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 }
 .footer-inner {
   max-width: 1200px;

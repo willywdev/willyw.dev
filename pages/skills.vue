@@ -1,14 +1,30 @@
 <script>
-import fetchData from "@/utils/fetchData";
+import Spinner from "@/components/Spinner.vue";
 
 export default {
   data() {
     return {
       skills: null,
+      isLoading: true,
     };
   },
-  async created() {
-    this.skills = await fetchData("api/skills");
+  components: {
+    Spinner,
+  },
+  methods: {
+    async fetchSkills() {
+      try {
+        this.skills = await $fetch("/api/skills");
+        this.isLoading = false;
+      } catch (error) {
+        console.error(error);
+        this.skills = [];
+        this.isLoading = true;
+      }
+    },
+  },
+  mounted() {
+    this.fetchSkills();
   },
 };
 </script>
@@ -19,7 +35,8 @@ export default {
   </Head>
   <section>
     <h2>skills</h2>
-    <div class="icon-container">
+    <div v-if="isLoading"><Spinner /></div>
+    <div v-else class="icon-container">
       <Icon
         v-for="skill in skills?.sort()"
         :key="skill.name"
@@ -30,10 +47,13 @@ export default {
 </template>
 
 <style scoped>
+section {
+  margin-top: 2rem;
+}
 .icon-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
   gap: 6px;
-  justify-content: center;
+  justify-items: center;
 }
 </style>

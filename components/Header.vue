@@ -51,6 +51,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #161616;
+  border: 1px solid #2b2a2a;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  padding: 1rem;
+  border-radius: 15px;
 }
 .logo-container:focus,
 .hamburger:focus {

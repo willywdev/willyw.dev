@@ -13,6 +13,9 @@ export default {};
 </template>
 
 <style scoped>
+section {
+  margin-top: 2rem;
+}
 p {
   text-align: center;
   font-size: 1.5rem;
