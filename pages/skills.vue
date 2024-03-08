@@ -46,14 +46,4 @@ export default {
   </section>
 </template>
 
-<style scoped>
-section {
-  margin-top: 2rem;
-}
-.icon-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
-  gap: 6px;
-  justify-items: center;
-}
-</style>
+<style lang="scss" scoped></style>

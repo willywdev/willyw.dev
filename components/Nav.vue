@@ -17,19 +17,4 @@
   </nav>
 </template>
 
-<style scoped>
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-}
-.ko-fi {
-  width: 44px;
-}
-a:active {
-  transform: translateY(1px);
-}
-</style>
+<style lang="scss" scoped></style>

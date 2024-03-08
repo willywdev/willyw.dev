@@ -12,13 +12,4 @@ export default {};
   </section>
 </template>
 
-<style scoped>
-section {
-  margin-top: 2rem;
-}
-p {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #666;
-}
-</style>
+<style lang="scss" scoped></style>

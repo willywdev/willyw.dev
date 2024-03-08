@@ -56,11 +56,4 @@ export default {
   </section>
 </template>
 
-<style scoped>
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-</style>
+<style lang="scss" scoped></style>

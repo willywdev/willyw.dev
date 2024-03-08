@@ -15,15 +15,4 @@
     </p>
   </section>
 </template>
-<style>
-section {
-  margin-top: 2rem;
-}
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-#first-paragraph {
-  margin-bottom: 5px;
-}
-</style>
+<style lang="scss" scoped></style>
