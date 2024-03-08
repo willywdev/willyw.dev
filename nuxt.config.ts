@@ -3,11 +3,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["nuxt-icon", "@nuxt/image", "@nuxtjs/fontaine"],
-  css: [
-    "/assets/styles/variables.css",
-    "/assets/fonts/font.css",
-    "/assets/styles/hamburgers.css",
-  ],
+  css: ["/assets/styles/hamburgers.css"],
   runtimeConfig: {
     admin: "",
     password: "",

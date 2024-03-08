@@ -1,17 +1,11 @@
-<script>
-export default {
-  data() {
-    return {
-      currentYear: new Date().getFullYear(),
-    };
-  },
-};
+<script setup>
+const currentYear = new Date().getFullYear();
 </script>
 
 <template>
   <footer>
     <div class="footer-inner">
-      <p>© willyw.dev {{ currentYear }}</p>
+      <p>© willyw.dev - {{ currentYear }}</p>
       <p class="motto">
         Creating impactful software solutions with a touch of creativity.
       </p>
@@ -24,4 +18,5 @@ export default {
     </div>
   </footer>
 </template>
+
 <style lang="scss" scoped></style>

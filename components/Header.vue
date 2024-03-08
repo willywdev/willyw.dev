@@ -1,29 +1,19 @@
-<script>
+<script setup>
 import Nav from "./Nav.vue";
 
-export default {
-  components: {
-    Nav,
-  },
-  data() {
-    return {
-      isMenuOpen: false,
-    };
-  },
-  methods: {
-    triggerMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-  },
-  computed: {
-    hamburgerClasses() {
-      return `mobile-nav hamburger hamburger--elastic   ${
-        !this.isMenuOpen ? "" : "is-active"
-      }`;
-    },
-  },
-};
+const isMenuOpen = ref(false);
+
+function triggerMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+}
+
+const hamburgerClasses = computed(() => {
+  return `mobile-nav hamburger hamburger--elastic   ${
+    !isMenuOpen.value ? "" : "is-active"
+  }`;
+});
 </script>
+
 <template>
   <header>
     <a class="logo-container" href=".">
@@ -45,4 +35,28 @@ export default {
   </transition>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.desktop-nav {
+  display: none;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.333s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}
+</style>

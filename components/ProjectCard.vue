@@ -1,20 +1,16 @@
-<script>
-import { hexToRGBA } from "#imports";
+<script setup>
+import hexToRGBA from "@/utils/hexToRGBA.js";
+import { defineProps } from "vue";
 
-export default {
-  props: {
-    projectBackground: String,
-    projectIcon: String,
-    projectTitle: String,
-    projectDescription: String,
-    projectRepo: String,
-    projectLiveLink: String,
-    techStackIcons: Array,
-  },
-  methods: {
-    hexToRGBA,
-  },
-};
+defineProps({
+  projectBackground: String,
+  projectIcon: String,
+  projectTitle: String,
+  projectDescription: String,
+  projectRepo: String,
+  projectLiveLink: String,
+  techStackIcons: Array,
+});
 </script>
 
 <template>

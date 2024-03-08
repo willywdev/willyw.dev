@@ -1,13 +1,6 @@
-<script>
+<script setup>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-
-export default {
-  components: {
-    Header,
-    Footer,
-  },
-};
 </script>
 
 <template>
@@ -43,6 +36,5 @@ export default {
 </template>
 
 <style lang="scss" is:global>
-@import "~sanitize.css", "~sanitize.css/typography.css",
-  "~sanitize.css/system-ui.css";
+@import "@/assets/styles/global.scss";
 </style>

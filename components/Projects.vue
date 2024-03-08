@@ -1,47 +1,19 @@
-<script>
+<script setup>
 import ProjectCard from "./ProjectCard.vue";
 import Button from "./Button.vue";
 import Spinner from "./Spinner.vue";
 
-export default {
-  data() {
-    return {
-      projects: [],
-      isLoading: true,
-    };
-  },
-  components: {
-    ProjectCard,
-    Button,
-    Spinner,
-  },
-  computed: {
-    slicedProjects() {
-      return this.projects ? this.projects.slice(0, 3) : [];
-    },
-  },
-  methods: {
-    async fetchProjects() {
-      try {
-        this.projects = await $fetch("/api/projects");
-        this.isLoading = false;
-      } catch (error) {
-        console.error(error);
-        this.projects = [];
-        this.isLoading = true;
-      }
-    },
-  },
-  mounted() {
-    this.fetchProjects();
-  },
-};
+const { data: projects, pending: isLoading, error } = useFetch("/api/projects");
+
+const slicedProjects = computed(() => {
+  return projects.value ? projects.value.slice(0, 3) : [];
+});
 </script>
 
 <template>
   <section>
     <h2>projects</h2>
-    <div v-if="isLoading"><Spinner /></div>
+    <article v-if="isLoading.value"><Spinner /></article>
     <div v-else v-for="project in slicedProjects" :key="project.projectTitle">
       <ProjectCard
         :projectBackground="project.background"
