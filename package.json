@@ -2,6 +2,7 @@
   "name": "willywdev",
   "private": true,
   "type": "module",
+  "license": "GPL-3.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
