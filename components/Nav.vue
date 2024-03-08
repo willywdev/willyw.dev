@@ -1,12 +1,14 @@
+<script>
+import CodeText from "./CodeText.vue";
+</script>
+
 <template>
   <nav aria-label="Main navigation">
-    <nuxt-link to="/"><span aria-hidden="true">_</span>HOME</nuxt-link>
-    <nuxt-link to="/downloads"
-      ><span aria-hidden="true">_</span>DOWNLOADS</nuxt-link
-    >
-    <nuxt-link to="/skills"><span aria-hidden="true">_</span>SKILLS</nuxt-link>
+    <nuxt-link to="/"><CodeText>HOME</CodeText></nuxt-link>
+    <nuxt-link to="/downloads"><CodeText>DOWNLOADS</CodeText></nuxt-link>
+    <nuxt-link to="/skills"><CodeText>SKILLS</CodeText></nuxt-link>
     <nuxt-link to="https://github.com/willywdev" target="_blank"
-      ><span aria-hidden="true">_</span>GITHUB</nuxt-link
+      ><CodeText>GITHUB</CodeText></nuxt-link
     >
     <nuxt-link to="https://ko-fi.com/willywdev" target="_blank"
       ><img

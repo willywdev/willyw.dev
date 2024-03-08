@@ -15,7 +15,7 @@ defineProps({
 
 <template>
   <article>
-    <div class="card-header" :style="{ backgroundColor: projectBackground }">
+    <div class="card-header">
       <div class="projectTitleWithIcon">
         <Icon :name="projectIcon" size="24" />
         <h4>{{ projectTitle }}</h4>
@@ -28,9 +28,7 @@ defineProps({
         </ul>
       </div>
     </div>
-    <div
-      class="card-body"
-      :style="{ backgroundColor: hexToRGBA(projectBackground) }">
+    <div class="card-body">
       <p>{{ projectDescription }}</p>
       <div class="project-link-container">
         <nuxt-link :to="projectRepo" class="project-link"
