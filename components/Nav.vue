@@ -24,9 +24,17 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   gap: 1rem;
-  color: $dark-color;
+  background-color: #222222;
+  border: 1px solid rgba(#000, 0.9);
+  border-radius: 15px;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
+a {
+  color: $teal;
 }
 
 .ko-fi {
