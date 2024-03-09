@@ -36,6 +36,16 @@ const hamburgerClasses = computed(() => {
 </template>
 
 <style lang="scss" scoped>
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  img {
+    width: 100px;
+  }
+}
 .desktop-nav {
   display: none;
 }

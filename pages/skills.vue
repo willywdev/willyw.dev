@@ -10,7 +10,7 @@ const sortedSkills = computed(() => {
 
 <template>
   <Head>
-    <title>Wilhelm Werwein \ skills</title>
+    <title>wilhelm werwein \ skills</title>
   </Head>
   <section>
     <h2>skills</h2>

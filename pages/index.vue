@@ -5,7 +5,7 @@ import AboutMe from "@/components/AboutMe.vue";
 
 <template>
   <Head>
-    <title>Wilhelm Werwein \ home</title>
+    <title>wilhelm werwein \ home</title>
   </Head>
   <AboutMe />
   <ProjectsVue />

@@ -19,4 +19,25 @@ import CodeText from "./CodeText.vue";
   </nav>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  color: $dark-color;
+}
+
+.ko-fi {
+  width: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 40px;
+  margin: 0;
+  padding: 0;
+}
+</style>

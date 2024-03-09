@@ -2,7 +2,7 @@
 
 <template>
   <Head>
-    <title>willyw.dev \ downloads</title>
+    <title>wilhelm werwein \ downloads</title>
   </Head>
   <section>
     <h2>downloads</h2>

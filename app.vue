@@ -35,6 +35,4 @@ import Footer from "@/components/Footer.vue";
   </NuxtLayout>
 </template>
 
-<style lang="scss" is:global>
-@import "@/assets/styles/global.scss";
-</style>
+<style lang="scss"></style>
