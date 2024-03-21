@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Wilhelm Werwein's Portfolio",
+  "short_name": "willyw.dev",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#202020",
+  "description": "Explore Wilhelm Werwein's software development projects, specializing in React, Vue, and geo-informatics. Discover innovative solutions in web application development."
+}
