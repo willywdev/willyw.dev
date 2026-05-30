@@ -1,0 +1,18 @@
+---
+import { site } from "../data/site.js";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.js";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const year = 2026;
+---
+
+<footer class="border-t border-surface0 bg-crust">
+  <div
+    class="mx-auto flex max-w-5xl flex-col gap-1 px-6 py-6 font-mono text-[12.5px] text-overlay1 sm:flex-row sm:items-center sm:justify-between sm:px-8"
+  >
+    <span>© {year} {site.name}</span>
+    <span>{t("footer.built")}</span>
+  </div>
+</footer>

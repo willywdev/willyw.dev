@@ -1,12 +1,11 @@
 # build output
 dist/
-
+.vercel/
 # generated types
 .astro/
 
 # dependencies
 node_modules/
-pnpm-lock.yaml
 
 # logs
 npm-debug.log*
@@ -15,11 +14,20 @@ yarn-error.log*
 pnpm-debug.log*
 
 # environment variables
-*.env
-*.env.production
 .env
+.env.production
+
 # macOS-specific files
 .DS_Store
 
-# other
+# jetbrains setting folder
+.idea/
+
+# editor
 .vscode
+
+#other
+.claude
+.superpowers
+dist
+CLAUDE.md

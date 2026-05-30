@@ -1,0 +1,155 @@
+---
+import "@fontsource-variable/geist";
+import "@fontsource-variable/geist-mono";
+import "../styles/global.css";
+import { site } from "../data/site.js";
+import { getLangFromUrl, useTranslations, getAlternatePath } from "../i18n/utils.js";
+import { ClientRouter } from "astro:transitions";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const {
+  title = t("meta.title"),
+  description = t("meta.description"),
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const deHref = new URL(getAlternatePath(Astro.url, "de"), site.url).href;
+const enHref = new URL(getAlternatePath(Astro.url, "en"), site.url).href;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Wilhelm Werwein",
+  url: site.url,
+  jobTitle: "Technical Lead & Senior JavaScript Engineer",
+  sameAs: [site.social.github],
+  knowsAbout: ["JavaScript","TypeScript","Vue","Node.js","Rust","Go","Geoinformatik","Web Development","Software Architecture"],
+  address: { "@type": "PostalAddress", addressCountry: "DE" },
+  image: site.url + "/og.png",
+};
+const siteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Wilhelm Werwein",
+  url: site.url,
+  inLanguage: ["de","en"],
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script is:inline>
+      try {
+        const stored = localStorage.getItem("lang");
+        const valid = stored === "de" || stored === "en";
+        const path = location.pathname;
+        const current = path === "/en" || path.startsWith("/en/") ? "en" : "de";
+        let target;
+        if (valid) {
+          target = stored;
+        } else {
+          const nav = (navigator.languages || [navigator.language || "de"]);
+          target = "de";
+          for (const l of nav) {
+            if (l.startsWith("en")) { target = "en"; break; }
+            if (l.startsWith("de")) { target = "de"; break; }
+          }
+        }
+        if (target !== current) {
+          let next;
+          if (target === "en") {
+            next = "/en" + (path === "/" ? "/" : path);
+          } else {
+            next = path.replace(/^\/en/, "") || "/";
+          }
+          location.replace(next + location.search + location.hash);
+        }
+      } catch (_) {}
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="de" href={deHref} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="x-default" href={deHref} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === "en" ? "en_US" : "de_DE"} />
+    <meta property="og:site_name" content={site.domain} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="theme-color" content="#0c0e13" />
+    <ClientRouter />
+
+    <meta property="og:image" content={new URL("/og.png", site.url).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Wilhelm Werwein — Technical Lead & Senior JavaScript Engineer" />
+    <meta name="twitter:image" content={new URL("/og.png", site.url).href} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
+  </head>
+
+  <body class="min-h-dvh">
+    <slot />
+
+    <script>
+      /** @param {IntersectionObserverEntry[]} entries */
+      function initReveal() {
+        const reveals = document.querySelectorAll(".reveal");
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (reduce || !("IntersectionObserver" in window)) {
+          reveals.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.1 },
+        );
+        reveals.forEach((el) => observer.observe(el));
+      }
+
+      document.addEventListener("astro:page-load", initReveal);
+    </script>
+
+    <script is:inline>
+      if (!window.__eggLogged) {
+        window.__eggLogged = true;
+        console.log("%c willyw.dev ", "background:#3b82f6;color:#0c0e13;font-weight:700;padding:4px 10px;border-radius:6px;font-family:'Geist Mono',monospace;font-size:13px");
+        console.log("%cNeugierig im Code? Gut so — alles offen: https://github.com/willywdev", "color:#94e2d5;font-family:'Geist Mono',monospace;font-size:12px");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+---
+import { site, nav } from "../data/site.js";
+import { Icon } from "astro-icon/components";
+import LangSwitcher from "./LangSwitcher.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils.js";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+function resolveHref(href) {
+  if (href.startsWith("/") && lang === "en") return "/en" + href;
+  return href;
+}
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-surface0 bg-bg/70 backdrop-blur-md"
+>
+  <nav
+    class="mx-auto flex max-w-5xl items-center gap-6 px-6 py-4 sm:px-8"
+    aria-label="Hauptnavigation"
+  >
+    <a
+      href={lang === "en" ? "/en/" : "/"}
+      class="flex items-center gap-2 font-mono text-[15px] font-semibold text-white"
+    >
+      {site.domain}
+    </a>
+
+    <div class="ml-auto flex items-center gap-6">
+      <ul class="hidden items-center gap-6 sm:flex">
+        {
+          nav.map((item) => (
+            <li class="flex items-center">
+              <a
+                href={resolveHref(item.href)}
+                class="text-[14.5px] text-subtext1 transition-colors hover:text-white"
+              >
+                {t(item.key)}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <LangSwitcher />
+      <a
+        href={resolveHref("/#kontakt")}
+        class="hidden rounded-[9px] bg-accent-strong px-4 py-2 text-[14px] font-semibold text-white transition-colors hover:brightness-110 sm:inline-flex"
+      >
+        {t("nav.contact")}
+      </a>
+
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="relative flex size-6 items-center justify-center text-subtext1 transition-colors hover:text-white sm:hidden"
+      >
+        <span id="icon-menu" class="menu-icon-layer absolute inset-0 flex items-center justify-center">
+          <Icon name="lucide:menu" class="size-6" />
+        </span>
+        <span id="icon-close" class="menu-icon-layer absolute inset-0 flex items-center justify-center opacity-0 rotate-90">
+          <Icon name="lucide:x" class="size-6" />
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    class="mobile-menu-panel overflow-hidden border-b border-surface0 bg-bg/95 backdrop-blur-md sm:hidden"
+  >
+    <div class="mx-auto max-w-5xl px-6 pb-4 pt-2">
+      <ul class="flex flex-col">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={resolveHref(item.href)}
+                class="mobile-menu-link block py-3 text-lg text-subtext1 transition-colors hover:text-white"
+              >
+                {t(item.key)}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a
+        href={resolveHref("/#kontakt")}
+        class="mobile-menu-link mt-3 block w-full rounded-[9px] bg-accent-strong py-3 text-center text-[14px] font-semibold text-white transition-colors hover:brightness-110"
+      >
+        {t("nav.contact")}
+      </a>
+      <div class="mt-4 flex justify-center">
+        <LangSwitcher />
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .menu-icon-layer {
+    transition: opacity 180ms ease-out, transform 180ms ease-out;
+  }
+
+  .menu-icon-layer.icon-hidden {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+
+  .menu-icon-layer.icon-visible {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .mobile-menu-panel {
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height 200ms ease-out,
+      opacity 200ms ease-out;
+  }
+
+  .mobile-menu-panel.is-open {
+    max-height: 400px;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  function openMenu() {
+    const menu = document.getElementById("mobile-menu");
+    const toggle = document.getElementById("mobile-menu-toggle");
+    const iconMenu = document.getElementById("icon-menu");
+    const iconClose = document.getElementById("icon-close");
+    if (!menu || !toggle) return;
+    menu.classList.add("is-open");
+    if (iconMenu) iconMenu.classList.add("icon-hidden");
+    if (iconClose) iconClose.classList.add("icon-visible");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Menü schließen");
+  }
+
+  function closeMenu() {
+    const menu = document.getElementById("mobile-menu");
+    const toggle = document.getElementById("mobile-menu-toggle");
+    const iconMenu = document.getElementById("icon-menu");
+    const iconClose = document.getElementById("icon-close");
+    if (!menu || !toggle) return;
+    menu.classList.remove("is-open");
+    if (iconMenu) iconMenu.classList.remove("icon-hidden");
+    if (iconClose) iconClose.classList.remove("icon-visible");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Menü öffnen");
+  }
+
+  function initMenu() {
+    const toggle = document.getElementById("mobile-menu-toggle");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    document.querySelectorAll(".mobile-menu-link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
+  if (!window.__navGlobalListeners) {
+    window.__navGlobalListeners = true;
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 640) closeMenu();
+    });
+  }
+
+  document.addEventListener("astro:page-load", initMenu);
+</script>
