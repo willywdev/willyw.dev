@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionLabel from "../SectionLabel.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils.js";
+import { site } from "../../data/site.js";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const experienceYears = Math.floor(
+  (Date.now() - new Date(site.careerStart).getTime()) / 31557600000
+);
+
+const meta = [
+  { icon: "lucide:map-pin", text: t("about.meta.location") },
+  { icon: "lucide:code", text: t("about.meta.profession") },
+  { icon: "lucide:briefcase", text: t("about.meta.role") },
+  { icon: "lucide:globe", text: t("about.meta.domain") },
+  { icon: "lucide:git-branch", text: `${experienceYears}+ ${t("about.meta.experience")}` },
+];
+---
+
+<section id="ueber" class="reveal border-t border-surface0/50 py-15 bg-mantle">
+  <div class="mx-auto max-w-5xl px-6 sm:px-8">
+    <SectionLabel num="01" text={t("about.label")} />
+    <h2 class="mb-4 text-[30px] font-bold tracking-tight text-white">
+      {t("about.heading")}
+    </h2>
+    <p class="max-w-[60ch] text-[17px] leading-relaxed text-subtext1">
+      {t("about.body")}
+    </p>
+
+    <ul class="mt-6 flex flex-wrap gap-2.5">
+      {
+        meta.map((item) => (
+          <li class="inline-flex items-center gap-2 rounded-lg border border-surface0 px-3 py-1.5 font-mono text-[12.5px] text-subtext0">
+            <Icon name={item.icon} class="size-4 text-accent-2" />
+            {item.text}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import { getLangFromUrl, useTranslations, getAlternatePath } from "../i18n/utils.js";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const deHref = getAlternatePath(Astro.url, "de");
+const enHref = getAlternatePath(Astro.url, "en");
+---
+
+{/* nudge down to baseline-align the smaller mono labels with the sans nav links */}
+<span class="flex translate-y-[1.5px] items-center gap-1 font-mono text-[12.5px]" aria-label={t("lang.switch")}>
+  {lang === "de" ? (
+    <span class="text-white" aria-current="true">DE</span>
+  ) : (
+    <a href={deHref} data-setlang="de" class="text-overlay1 transition-colors hover:text-subtext1">DE</a>
+  )}
+  <span class="text-overlay1 select-none">/</span>
+  {lang === "en" ? (
+    <span class="text-white" aria-current="true">EN</span>
+  ) : (
+    <a href={enHref} data-setlang="en" class="text-overlay1 transition-colors hover:text-subtext1">EN</a>
+  )}
+</span>
+
+<script is:inline>
+  if (!window.__langSwitcherListener) {
+    window.__langSwitcherListener = true;
+    document.addEventListener("click", function(e) {
+      var target = e.target.closest("[data-setlang]");
+      if (target) {
+        localStorage.setItem("lang", target.getAttribute("data-setlang"));
+      }
+    });
+  }
+</script>

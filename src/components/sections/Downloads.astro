@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+import { downloads } from "../../data/downloads.js";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils.js";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="mx-auto max-w-5xl px-6 pt-24 pb-32 sm:px-8">
+  <p class="mb-3.5 font-mono text-[13px] text-accent-2">// {t("downloads.label")}</p>
+  <h1 class="mb-2 text-[30px] font-bold tracking-tight text-white">
+    {t("downloads.heading")}
+  </h1>
+  <p class="mb-8 text-[15px] text-subtext0">{t("downloads.subline")}</p>
+
+  <ul class="grid gap-[18px] sm:grid-cols-2">
+    {
+      downloads.map((item) => {
+        const isPlaceholder = item.href === "#";
+        return (
+          <li>
+            <div class={`block h-full rounded-2xl p-[22px] ${isPlaceholder ? "border border-dashed border-surface0 bg-mantle opacity-60" : "border border-surface0 bg-mantle"}`}>
+              <div class="mb-3.5 flex items-center justify-between">
+                <span class={`grid size-[42px] place-items-center rounded-[10px] ${isPlaceholder ? "bg-surface0/40 text-overlay1" : "bg-accent/12 text-accent"}`}>
+                  <Icon name={item.icon} class="size-[22px]" />
+                </span>
+              </div>
+              <h3 class="text-[19px] font-semibold tracking-tight text-white">
+                {item.title[lang]}
+              </h3>
+              <p class="mt-1.5 text-[14.5px] text-subtext0">
+                {item.description[lang]}
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="font-mono text-[12px] text-subtext0">{item.meta}</span>
+                {isPlaceholder ? (
+                  <span class="font-mono text-[12px] text-subtext0">{t("downloads.soon")}</span>
+                ) : (
+                  <span class="inline-flex items-center gap-1.5 text-[13px] font-medium text-accent">
+                    {t("downloads.action")}
+                    <Icon name="lucide:download" class="size-4" />
+                  </span>
+                )}
+              </div>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
