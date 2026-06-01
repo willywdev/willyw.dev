@@ -42,6 +42,15 @@ function resolveHref(href) {
           ))
         }
       </ul>
+      <a
+        href={site.social.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        class="hidden text-subtext1 transition-colors hover:text-white sm:inline-flex"
+      >
+        <Icon name="simple-icons:github" class="size-5" />
+      </a>
       <LangSwitcher />
       <a
         href={resolveHref("/#kontakt")}
@@ -93,7 +102,16 @@ function resolveHref(href) {
       >
         {t("nav.contact")}
       </a>
-      <div class="mt-4 flex justify-center">
+      <div class="mt-4 flex items-center justify-center gap-5">
+        <a
+          href={site.social.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          class="text-subtext1 transition-colors hover:text-white"
+        >
+          <Icon name="simple-icons:github" class="size-6" />
+        </a>
         <LangSwitcher />
       </div>
     </div>

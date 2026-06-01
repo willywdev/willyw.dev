@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0c0e13;
-  --color-base: #181c24;
-  --color-mantle: #14171f;
-  --color-crust: #090b0f;
-  --color-surface0: #272b35;
-  --color-surface1: #363c48;
-  --color-overlay1: #767d8b;
-  --color-subtext0: #a3aab8;
-  --color-subtext1: #bcc2cd;
-  --color-text: #d6dae3;
+  --color-bg: #131417;
+  --color-base: #212228;
+  --color-mantle: #181a1d;
+  --color-crust: #0c0d0f;
+  --color-surface0: #2b2c31;
+  --color-surface1: #3a3b42;
+  --color-overlay1: #787a82;
+  --color-subtext0: #a3a5ac;
+  --color-subtext1: #bcbec5;
+  --color-text: #d6d8de;
 
   --color-mauve: #cba6f7;
   --color-blue: #89b4fa;
@@ -24,6 +24,7 @@
   --color-accent: #3b82f6;
   --color-accent-strong: #2563eb;
   --color-accent-2: #94e2d5;
+  --color-accent-warm: #fb923c;
 
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -38,7 +39,7 @@
 
   body {
     background-color: var(--color-bg);
-    background-image: radial-gradient(circle, rgba(186, 194, 222, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(202, 202, 208, 0.05) 1px, transparent 1px);
     background-size: 22px 22px;
     color: var(--color-text);
     font-family: var(--font-sans);
