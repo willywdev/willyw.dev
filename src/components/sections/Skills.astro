@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section id="stack" class="reveal border-t border-surface0/50 py-15">
+<section id="stack" class="reveal border-t border-surface0/40 py-15">
   <div class="mx-auto max-w-5xl px-6 sm:px-8">
     <SectionLabel num="02" text={t("skills.label")} />
     <h2 class="mb-5 text-[30px] font-bold tracking-tight text-white">
@@ -21,7 +21,7 @@ const t = useTranslations(lang);
           <p class="mb-3 font-mono text-[12px] uppercase tracking-wider text-overlay1">{t(group.titleKey)}</p>
           <ul class="flex flex-wrap gap-2.5">
             {group.items.map((skill) => (
-              <li class="inline-flex items-center gap-2.5 rounded-[10px] border border-surface0 bg-mantle px-3.5 py-2.5 text-[14px] text-subtext1">
+              <li class="inline-flex items-center gap-2.5 rounded-[10px] border border-surface0/50 bg-mantle px-3.5 py-2.5 text-[14px] text-subtext1">
                 <Icon name={skill.icon} class="size-[18px]" style={`color:${skill.color}`} />
                 {skill.name}
               </li>

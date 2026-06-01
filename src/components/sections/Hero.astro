@@ -1,6 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils.js";
+import avatar from "../../assets/avatar.png";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,6 +19,16 @@ const roles = {
   <div class="glow" aria-hidden="true"></div>
 
   <div class="relative z-10 mx-auto max-w-3xl">
+    <div class="avatar-wrap mx-auto mb-7 w-fit">
+      <Image
+        src={avatar}
+        alt="Wilhelm Werwein"
+        width={208}
+        height={208}
+        loading="eager"
+        class="avatar size-[104px] rounded-full object-cover"
+      />
+    </div>
     <p class="mb-5 font-mono text-[14px] text-accent">
       <span class="text-overlay1">/home/</span><span id="role-rotator" data-roles={JSON.stringify(roles[lang])}>{roles[lang][0]}</span><span class="role-caret">▋</span>
     </p>
@@ -30,9 +42,7 @@ const roles = {
     <p
       class="mx-auto mt-5 max-w-[50ch] text-[clamp(16px,1.7vw,19px)] text-subtext0"
     >
-      {t("hero.sub.a")}
-      {t("hero.sub.sys")}{t("hero.sub.b")}
-      {t("hero.sub.det")}.
+      {t("hero.sub")}
     </p>
 
     <div class="mt-8 flex flex-wrap justify-center gap-3">
@@ -62,14 +72,15 @@ const roles = {
     height: 560px;
     max-width: 120vw;
     transform: translateX(-50%) translateZ(0);
-    will-change: transform;
+    will-change: transform, opacity;
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.3;
     z-index: 0;
     background:
       radial-gradient(circle at 50% 50%, var(--color-accent), transparent 60%),
-      radial-gradient(circle at 32% 60%, var(--color-teal), transparent 55%);
+      radial-gradient(circle at 30% 62%, var(--color-teal), transparent 55%),
+      radial-gradient(circle at 70% 38%, var(--color-accent-warm), transparent 50%);
   }
 
   @media (max-width: 640px) {
@@ -80,13 +91,31 @@ const roles = {
     }
   }
 
+  .avatar {
+    box-shadow:
+      0 0 0 2px color-mix(in oklab, var(--color-accent-warm) 75%, transparent),
+      0 0 0 7px color-mix(in oklab, var(--color-accent-warm) 12%, transparent),
+      0 16px 40px -14px rgba(0, 0, 0, 0.65);
+  }
+
   .role-caret { color: var(--color-accent); }
 
   @media (prefers-reduced-motion: no-preference) {
     .role-caret { animation: role-blink 1.1s steps(2, end) infinite; }
+    .glow { animation: glow-drift 22s ease-in-out infinite alternate; }
+    .avatar-wrap { animation: avatar-float 6.5s ease-in-out infinite; }
   }
 
   @keyframes role-blink { 50% { opacity: 0; } }
+
+  @keyframes glow-drift {
+    from { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.26; }
+    to   { transform: translateX(-46%) translateY(8px) scale(1.07); opacity: 0.36; }
+  }
+
+  @keyframes avatar-float {
+    50% { transform: translateY(-7px); }
+  }
 </style>
 
 <script>

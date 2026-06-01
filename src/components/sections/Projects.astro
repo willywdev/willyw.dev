@@ -8,7 +8,19 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section id="projekte" class="reveal border-t border-surface0/50 py-15 bg-mantle">
+<section id="projekte" class="reveal border-t border-surface0/40 py-15 bg-mantle">
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <linearGradient id="cardWarm" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fdba74" />
+        <stop offset="100%" stop-color="#fb923c" />
+      </linearGradient>
+      <linearGradient id="cardTeal" x1="1" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#94e2d5" />
+        <stop offset="100%" stop-color="#0d9488" />
+      </linearGradient>
+    </defs>
+  </svg>
   <div class="mx-auto max-w-5xl px-6 sm:px-8">
     <SectionLabel num="03" text={t("projects.label")} />
     <h2 class="mb-5 text-[30px] font-bold tracking-tight text-white">
@@ -31,7 +43,7 @@ const t = useTranslations(lang);
                   <h3 class="text-[19px] font-semibold tracking-tight text-white">
                     {project.title[lang]}
                   </h3>
-                  <p class="mt-1.5 text-[14.5px] text-subtext0">
+                  <p class="mt-1.5 text-[14.5px] text-subtext1">
                     {project.description[lang]}
                   </p>
                   <div class="mt-4 flex flex-wrap gap-1.5">
@@ -47,21 +59,37 @@ const t = useTranslations(lang);
                   href={project.href}
                   target={project.href.startsWith("http") ? "_blank" : undefined}
                   rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  class="group block h-full rounded-2xl border border-surface0 bg-mantle p-[22px] transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+                  class="project-card group relative isolate block h-full overflow-hidden rounded-2xl border border-surface0 bg-mantle p-[22px] transition-all duration-200 hover:-translate-y-1 hover:border-accent-warm"
                 >
+                  <svg
+                    class="card-waves"
+                    viewBox="0 0 400 280"
+                    preserveAspectRatio="xMidYMid slice"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0,0 L400,0 L400,90 C330,70 300,150 220,130 C150,115 90,170 0,150 Z"
+                      fill="url(#cardWarm)"
+                    />
+                    <path
+                      d="M400,120 L400,280 L0,280 L0,210 C80,230 140,180 220,200 C300,220 350,160 400,120 Z"
+                      fill="url(#cardTeal)"
+                    />
+                  </svg>
                   <div class="mb-3.5 flex items-center justify-between">
-                    <span class="grid size-[42px] place-items-center rounded-[10px] bg-accent/12 text-accent">
+                    <span class="grid size-[42px] place-items-center rounded-[10px] bg-accent-warm/12 text-accent-warm">
                       <Icon name={project.icon} class="size-[22px]" />
                     </span>
                     <Icon
                       name="lucide:arrow-up-right"
-                      class="size-5 text-overlay1 transition-colors group-hover:text-accent"
+                      class="size-5 text-overlay1 transition-colors group-hover:text-accent-warm"
                     />
                   </div>
                   <h3 class="text-[19px] font-semibold tracking-tight text-white">
                     {project.title[lang]}
                   </h3>
-                  <p class="mt-1.5 text-[14.5px] text-subtext0">
+                  <p class="mt-1.5 text-[14.5px] text-subtext1">
                     {project.description[lang]}
                   </p>
                   <div class="mt-4 flex flex-wrap gap-1.5">
@@ -80,3 +108,26 @@ const t = useTranslations(lang);
     </ul>
   </div>
 </section>
+
+<style>
+  .card-waves {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.18;
+    filter: blur(13px);
+    transform: scale(1.12);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 45%);
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .project-card:hover .card-waves {
+    opacity: 0.26;
+  }
+  .project-card:hover {
+    box-shadow: 0 18px 50px -22px color-mix(in oklab, var(--color-accent-warm) 55%, transparent);
+  }
+</style>

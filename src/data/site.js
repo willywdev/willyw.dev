@@ -15,8 +15,5 @@ export const site = {
 };
 
 export const nav = [
-  { key: "nav.about", href: "/#ueber" },
-  { key: "nav.stack", href: "/#stack" },
-  { key: "nav.projects", href: "/#projekte" },
   { key: "nav.downloads", href: "/downloads" },
 ];
